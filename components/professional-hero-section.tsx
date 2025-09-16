@@ -69,7 +69,7 @@ export function ProfessionalHeroSection() {
             <div className="flex items-center gap-3 mb-6">
               <div className="relative">
                 <img
-                  src="/professional-developer-headshot.png"
+                  src="https://avatars.githubusercontent.com/u/52155751?v=4"
                   alt="Professional Mobile Developer"
                   className="w-20 h-20 rounded-full border-3 border-primary/20 shadow-lg"
                 />
@@ -130,7 +130,7 @@ export function ProfessionalHeroSection() {
                 <Twitter className="w-5 h-5 text-sky-500 group-hover:scale-110 transition-transform" />
               </a>
               <a
-                href="mailto:your.email@example.com"
+                href="mailto:kngrnr.io@gmail.com"
                 className="flex items-center justify-center w-12 h-12 rounded-full bg-accent/10 hover:bg-accent/20 transition-colors group"
               >
                 <Mail className="w-5 h-5 text-accent group-hover:scale-110 transition-transform" />

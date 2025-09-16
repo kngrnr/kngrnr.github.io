@@ -48,7 +48,7 @@ export function FloatingContactSection() {
                 </div>
                 <div>
                   <h3 className="font-semibold">Email</h3>
-                  <p className="text-muted-foreground">hello@mobiledev.com</p>
+                  <p className="text-muted-foreground">kngrnr.io@gmail.com</p>
                 </div>
               </div>
 
@@ -68,7 +68,7 @@ export function FloatingContactSection() {
                 </div>
                 <div>
                   <h3 className="font-semibold">Location</h3>
-                  <p className="text-muted-foreground">San Francisco, CA</p>
+                  <p className="text-muted-foreground">City of San Jose Delmonte, PH</p>
                 </div>
               </div>
             </div>

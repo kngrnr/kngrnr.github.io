@@ -46,7 +46,7 @@ export function ContactSection() {
               <div className="space-y-4">
                 <div className="flex items-center">
                   <Mail className="w-5 h-5 text-primary mr-3" />
-                  <span>hello@developer.com</span>
+                  <span>kngrnr.io@gmail.com</span>
                 </div>
                 <div className="flex items-center">
                   <Phone className="w-5 h-5 text-primary mr-3" />
@@ -54,7 +54,7 @@ export function ContactSection() {
                 </div>
                 <div className="flex items-center">
                   <MapPin className="w-5 h-5 text-primary mr-3" />
-                  <span>San Francisco, CA</span>
+                  <span>City of San Jose Delmonte, PH</span>
                 </div>
               </div>
             </div>
