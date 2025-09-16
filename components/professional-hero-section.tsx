@@ -106,7 +106,7 @@ export function ProfessionalHeroSection() {
             {/* Key achievements */}
             <div className="flex items-center gap-4 mb-8">
               <a
-                href="https://github.com"
+                href="https://github.com/kngrnr"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 hover:bg-primary/20 transition-colors group"
@@ -114,7 +114,7 @@ export function ProfessionalHeroSection() {
                 <Github className="w-5 h-5 text-primary group-hover:scale-110 transition-transform" />
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://linkedin.com/in/kngrnr"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/10 hover:bg-blue-500/20 transition-colors group"
