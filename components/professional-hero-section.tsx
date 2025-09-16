@@ -53,11 +53,11 @@ export function ProfessionalHeroSection() {
   }, [])
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-background to-muted/30 pt-20 md:pt-24">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background/35 via-background/40 to-muted/20 pt-20 md:pt-24">
       {/* Professional background pattern */}
-      <div className="absolute inset-0 opacity-5">
+      <div className="absolute inset-0 opacity-[0.02]">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(8,145,178,0.1),transparent_50%)]" />
-        <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_48%,rgba(8,145,178,0.05)_49%,rgba(8,145,178,0.05)_51%,transparent_52%)] bg-[length:20px_20px]" />
+        <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_48%,rgba(8,145,178,0.02)_49%,rgba(8,145,178,0.02)_51%,transparent_52%)] bg-[length:20px_20px]" />
       </div>
 
       <div className="container mx-auto px-4 relative z-10">

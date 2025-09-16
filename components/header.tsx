@@ -20,7 +20,10 @@ export function Header() {
     // Scroll to top
     window.scrollTo({ top: 0, behavior: "smooth" })
 
-    window.dispatchEvent(new CustomEvent("resetAnimations"))
+    // Wait for scroll animation to complete (typically 500-800ms for smooth scroll)
+    setTimeout(() => {
+      window.dispatchEvent(new CustomEvent("resetAnimations"))
+    }, 800)
 
     setIsMenuOpen(false)
   }

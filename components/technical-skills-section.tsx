@@ -6,16 +6,7 @@ const technicalSkills = [
   {
     name: "Swift",
     icon: (
-      <svg viewBox="0 0 24 24" className="w-8 h-8">
-        <path
-          fill="#FA7343"
-          d="M24 12.31c0-6.63-5.37-12-12-12s-12 5.37-12 12c0 6.63 5.37 12 12 12s12-5.37 12-12zm-12-8.5c4.69 0 8.5 3.81 8.5 8.5s-3.81 8.5-8.5 8.5-8.5-3.81-8.5-8.5 3.81-8.5 8.5-8.5z"
-        />
-        <path
-          fill="#FA7343"
-          d="M18.71 7.21c-1.92-2.28-4.8-3.74-8.01-3.74-.85 0-1.67.1-2.46.29 2.32.73 4.46 2.04 6.26 3.84 1.8 1.8 3.11 3.94 3.84 6.26.19-.79.29-1.61.29-2.46 0-1.42-.31-2.77-.92-3.99z"
-        />
-      </svg>
+     <svg width="24px" height="24px" viewBox="-7.56 10.317 3.183 3.183" xmlns="http://www.w3.org/2000/svg"><path fill="#F05138" d="M-4.377 11.199v-0.096c-0.003 -0.069 -0.006 -0.141 -0.018 -0.21s-0.033 -0.135 -0.066 -0.198 -0.072 -0.12 -0.123 -0.168c-0.051 -0.051 -0.108 -0.09 -0.168 -0.123 -0.063 -0.033 -0.129 -0.054 -0.198 -0.066s-0.138 -0.018 -0.21 -0.018h-1.611c-0.018 0 -0.036 0 -0.051 0.003 -0.051 0.003 -0.105 0.006 -0.156 0.015s-0.102 0.024 -0.15 0.042c-0.015 0.006 -0.033 0.015 -0.048 0.021 -0.048 0.024 -0.09 0.054 -0.132 0.087 -0.012 0.012 -0.027 0.024 -0.039 0.036 -0.051 0.051 -0.09 0.108 -0.123 0.168 -0.033 0.063 -0.054 0.129 -0.066 0.198s-0.015 0.138 -0.018 0.21v1.611c0.003 0.069 0.006 0.141 0.018 0.21s0.033 0.135 0.066 0.198 0.072 0.12 0.123 0.168c0.051 0.051 0.108 0.09 0.168 0.123 0.063 0.033 0.129 0.054 0.198 0.066s0.138 0.018 0.21 0.018h1.611c0.069 -0.003 0.141 -0.006 0.21 -0.018s0.135 -0.033 0.198 -0.066 0.12 -0.072 0.168 -0.123c0.051 -0.051 0.09 -0.108 0.123 -0.168 0.033 -0.063 0.054 -0.129 0.066 -0.198s0.018 -0.138 0.018 -0.21v-1.512"/><path fill="#FFF" d="m-5.04 12.282 0.009 -0.036c0.132 -0.525 -0.189 -1.149 -0.735 -1.476 0.24 0.324 0.345 0.717 0.252 1.059 -0.009 0.03 -0.018 0.06 -0.03 0.09 -0.012 -0.009 -0.027 -0.018 -0.048 -0.027 0 0 -0.543 -0.336 -1.131 -0.927 -0.015 -0.015 0.315 0.471 0.687 0.864 -0.177 -0.099 -0.666 -0.456 -0.978 -0.738 0.039 0.063 0.084 0.126 0.132 0.183 0.258 0.33 0.597 0.735 1.002 1.047 -0.285 0.174 -0.687 0.189 -1.086 0 -0.099 -0.045 -0.192 -0.102 -0.279 -0.165 0.168 0.27 0.429 0.504 0.747 0.642 0.378 0.162 0.756 0.153 1.035 0.003 0 0 0.003 0 0.003 -0.003 0.012 -0.006 0.024 -0.015 0.036 -0.021 0.135 -0.069 0.399 -0.138 0.543 0.138 0.042 0.063 0.117 -0.297 -0.159 -0.633"/></svg>
     ),
     color: "from-orange-400 to-red-500",
     category: "iOS",
@@ -257,7 +248,7 @@ export function TechnicalSkillsSection() {
   }, [])
 
   return (
-    <section ref={sectionRef} id="skills" className="py-20 bg-gradient-to-br from-slate-50 to-blue-50">
+    <section ref={sectionRef} id="skills" className="py-20 bg-gradient-to-br from-slate-50/0 to-blue-50/0">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4 text-balance">Technical Skills</h2>
@@ -279,7 +270,7 @@ export function TechnicalSkillsSection() {
                   {categorySkills.map((skill, index) => (
                     <div
                       key={skill.name}
-                      className={`skill-card group relative p-6 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 opacity-0 translate-y-8 border border-gray-100 overflow-hidden`}
+                      className={`skill-card group relative p-6 bg-background  rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 opacity-0 translate-y-8 border border-border overflow-hidden`}
                       style={{ transitionDelay: `${index * 100}ms` }}
                     >
                       {/* Gradient background overlay */}
@@ -298,18 +289,18 @@ export function TechnicalSkillsSection() {
                           <div
                             className={`absolute inset-0 bg-gradient-to-r ${skill.color} rounded-full blur-lg opacity-0 group-hover:opacity-30 transition-all duration-300 scale-150`}
                           />
-                          <div className="relative p-3 bg-gray-50 rounded-full group-hover:bg-white transition-colors duration-300 group-hover:scale-110 transform">
+                          <div className="relative p-3 bg-muted rounded-full group-hover:bg-background  transition-colors duration-300 group-hover:scale-110 transform">
                             {skill.icon}
                           </div>
                         </div>
 
                         {/* Skill name */}
-                        <h4 className="text-sm font-semibold text-gray-800 text-center group-hover:text-gray-900 transition-colors duration-300">
+                        <h4 className="text-sm font-semibold text-foreground text-center group-hover:text-foreground transition-colors duration-300">
                           {skill.name}
                         </h4>
 
                         {/* Animated progress bar */}
-                        <div className="w-full h-1 bg-gray-200 rounded-full overflow-hidden">
+                        <div className="w-full h-1 bg-muted rounded-full overflow-hidden">
                           <div
                             className={`h-full bg-gradient-to-r ${skill.color} transform -translate-x-full group-hover:translate-x-0 transition-transform duration-700 ease-out`}
                           />
