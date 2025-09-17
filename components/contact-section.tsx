@@ -2,13 +2,13 @@
 
 import type React from "react"
 
-import { useState, useEffect, useRef } from "react" // added useEffect and useRef for animations
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
+import { Textarea } from "@/components/ui/textarea"
 import { Mail, MapPin, Phone, Send } from "lucide-react"
+import { useEffect, useRef, useState } from "react"; // added useEffect and useRef for animations
 
 export function ContactSection() {
   const [formData, setFormData] = useState({
@@ -102,7 +102,7 @@ export function ContactSection() {
                 </div>
                 <div>
                   <p className="font-medium group-hover:text-primary transition-colors duration-300">Email</p>
-                  <p className="text-muted-foreground">john.doe@example.com</p>
+                  <p className="text-muted-foreground">kngrnr.io@gmail.com</p>
                 </div>
               </div>
 
@@ -122,7 +122,7 @@ export function ContactSection() {
                 </div>
                 <div>
                   <p className="font-medium group-hover:text-primary transition-colors duration-300">Location</p>
-                  <p className="text-muted-foreground">San Francisco, CA</p>
+                  <p className="text-muted-foreground">San Jose Delmonte City, Bulacan, PH 🇵🇭</p>
                 </div>
               </div>
             </div>

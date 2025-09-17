@@ -1,159 +1,206 @@
 "use client"
 
-import { useState, useEffect } from "react"
-import { Card } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
+import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { ExternalLink, Github } from "lucide-react"
+import { Badge } from "@/components/ui/badge"
+import { Github, Smartphone, Globe } from "lucide-react"
 import Image from "next/image"
-
-const projects = [
-  {
-    id: 1,
-    title: "HALO Financial Trading",
-    description:
-      "Advanced financial trading platform with real-time analytics, predictive forecasting, and comprehensive portfolio management.",
-    image: "/images/halo-financial-mockup.jpg",
-    tags: ["Flutter", "Firebase", "Real-time Data", "Charts"],
-    size: "large",
-    color: "from-blue-500/20 to-cyan-500/20",
-  },
-  {
-    id: 2,
-    title: "PikFly Delivery",
-    description: "Location-based delivery platform connecting users with local stores for same-day delivery services.",
-    image: "/images/pikfly-delivery-mockup.jpg",
-    tags: ["React Native", "Maps API", "Real-time Tracking"],
-    size: "medium",
-    color: "from-emerald-500/20 to-teal-500/20",
-  },
-  {
-    id: 3,
-    title: "LETS Logistics",
-    description: "Comprehensive logistics solution for efficient package delivery and route optimization.",
-    image: "/images/lets-logistics-mockup.jpg",
-    tags: ["Flutter", "Route Optimization", "GPS"],
-    size: "medium",
-    color: "from-red-500/20 to-pink-500/20",
-  },
-  {
-    id: 4,
-    title: "Macroverse Comics",
-    description:
-      "Next-generation digital comics platform with immersive TapStory format and interactive reading experiences.",
-    image: "/images/macroverse-comics-mockup.jpg",
-    tags: ["React Native", "Animation", "Interactive UI"],
-    size: "large",
-    color: "from-purple-500/20 to-indigo-500/20",
-  },
-]
+import { projects } from "@/data/projects"
+import { useEffect, useRef } from "react"
 
 export function BentoProjectsSection() {
-  const [visibleProjects, setVisibleProjects] = useState<number[]>([])
+  const sectionRef = useRef<HTMLElement>(null)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            const projectId = Number.parseInt(entry.target.getAttribute("data-project-id") || "0")
-            setVisibleProjects((prev) => [...prev, projectId])
+            const cards = entry.target.querySelectorAll(".project-card")
+            cards.forEach((card, index) => {
+              setTimeout(() => {
+                card.classList.remove("opacity-0", "translate-y-8")
+                card.classList.add("opacity-100", "translate-y-0")
+              }, index * 150)
+            })
           }
         })
       },
-      { threshold: 0.2 },
+      { threshold: 0.1 },
     )
 
-    const projectElements = document.querySelectorAll("[data-project-id]")
-    projectElements.forEach((el) => observer.observe(el))
-
-    const handleReset = () => {
-      setVisibleProjects([])
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current)
     }
-
-    window.addEventListener("resetAnimations", handleReset)
 
     return () => {
       observer.disconnect()
-      window.removeEventListener("resetAnimations", handleReset)
     }
   }, [])
 
   return (
-    <section id="projects" className="py-24 px-4">
-      <div className="container mx-auto">
+    <section
+      ref={sectionRef}
+      id="projects"
+      className="py-20 bg-gradient-to-br from-background via-muted/20 to-background"
+    >
+      <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-5xl font-black mb-6 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-            Featured Projects
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Discover the mobile applications I've crafted with passion and precision
+          <h2 className="text-3xl font-bold text-balance mb-4">Featured Projects</h2>
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto text-pretty">
+            A showcase of my recent work and the technologies I love working with
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
-          {projects.map((project, index) => (
-            <Card
-              key={project.id}
-              data-project-id={project.id}
-              className={`
-                group relative overflow-hidden border-0 bg-gradient-to-br ${project.color} backdrop-blur-sm
-                hover:scale-105 transition-all duration-500 cursor-pointer
-                ${project.size === "large" ? "md:col-span-2 lg:col-span-2" : ""}
-                ${visibleProjects.includes(project.id) ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}
-              `}
-              style={{
-                transitionDelay: `${index * 200}ms`,
-              }}
-            >
-              <div className="relative h-80 lg:h-96 overflow-hidden">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {projects.map((project, index) => (
+              <ProjectCard key={project.id} project={project} index={index} />
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <style jsx>{`
+        .play-store-btn {
+          background-color: #4ade80 !important;
+          color: #000000 !important;
+        }
+        .play-store-btn:hover {
+          background-color: #22c55e !important;
+        }
+        .app-store-btn {
+          background-color: #60a5fa !important;
+          color: #000000 !important;
+        }
+        .app-store-btn:hover {
+          background-color: #3b82f6 !important;
+        }
+        .play-store-btn span,
+        .app-store-btn span {
+          color: #000000 !important;
+        }
+        .play-store-btn svg,
+        .app-store-btn svg {
+          color: #000000 !important;
+        }
+      `}</style>
+    </section>
+  )
+}
+
+function ProjectCard({
+  project,
+  index,
+}: {
+  project: any
+  index: number
+}) {
+  return (
+    <Card className="project-card opacity-0 translate-y-8 transition-all duration-700 ease-out hover:shadow-2xl hover:-translate-y-2 group overflow-hidden border-0 bg-gradient-to-br from-card via-card to-muted/20 h-auto">
+      <CardContent className="p-0">
+        <div className="flex flex-col">
+          <div className="relative bg-gradient-to-br from-primary/10 via-primary/5 to-transparent p-6 flex flex-col items-center">
+            {/* Floating elements for visual interest */}
+            <div className="absolute top-2 right-2 w-8 h-8 bg-primary/10 rounded-full blur-xl"></div>
+            <div className="absolute bottom-2 left-2 w-6 h-6 bg-secondary/20 rounded-full blur-lg"></div>
+
+            <div className="relative group-hover:scale-105 transition-transform duration-500 mb-6">
+              <div className="w-full max-w-sm aspect-video rounded-lg overflow-hidden shadow-lg">
                 <Image
                   src={project.image || "/placeholder.svg"}
                   alt={project.title}
-                  fill
-                  className="object-cover group-hover:scale-110 transition-transform duration-700"
+                  width={400}
+                  height={225}
+                  className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-
-                {/* Hover overlay */}
-                <div className="absolute inset-0 bg-primary/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <div className="text-center text-white p-6">
-                    <h3 className="text-2xl font-bold mb-3">{project.title}</h3>
-                    <p className="text-white/90 mb-4 leading-relaxed">{project.description}</p>
-                    <div className="flex gap-2 justify-center">
-                      <Button size="sm" variant="secondary">
-                        <ExternalLink className="w-4 h-4 mr-2" />
-                        View Live
-                      </Button>
-                      <Button
-                        size="sm"
-                        variant="outline"
-                        className="border-white text-white hover:bg-white hover:text-primary bg-transparent"
-                      >
-                        <Github className="w-4 h-4 mr-2" />
-                        Code
-                      </Button>
-                    </div>
-                  </div>
-                </div>
               </div>
+            </div>
 
-              <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                <h3 className="text-2xl font-bold mb-2 group-hover:translate-y-2 transition-transform duration-300">
-                  {project.title}
-                </h3>
-                <div className="flex flex-wrap gap-2 opacity-90">
-                  {project.tags.map((tag) => (
-                    <Badge key={tag} variant="secondary" className="bg-white/20 text-white border-0">
-                      {tag}
-                    </Badge>
-                  ))}
-                </div>
+            {/* Technologies with better styling */}
+            <div className="w-full mb-4">
+              <div className="flex flex-wrap gap-2 justify-center">
+                {project.technologies.slice(0, 4).map((tech: string, idx: number) => (
+                  <Badge
+                    key={idx}
+                    variant="secondary"
+                    className="text-xs bg-background/60 backdrop-blur-sm border-primary/20 hover:bg-primary/10 transition-colors px-2 py-1 text-foreground"
+                  >
+                    {tech}
+                  </Badge>
+                ))}
+                {project.technologies.length > 4 && (
+                  <Badge variant="outline" className="text-xs px-2 py-1 text-foreground">
+                    +{project.technologies.length - 4}
+                  </Badge>
+                )}
               </div>
-            </Card>
-          ))}
+            </div>
+          </div>
+
+          <div className="p-6 flex flex-col space-y-4">
+            <h3 className="text-lg font-bold text-balance group-hover:text-primary transition-colors">
+              {project.title}
+            </h3>
+
+            <p className="text-muted-foreground text-sm leading-relaxed text-pretty">{project.description}</p>
+
+            <div className="flex flex-wrap gap-2 pt-2">
+              {project.githubUrl && (
+                <Button
+                  size="sm"
+                  variant="outline"
+                  className="group/btn flex-1 min-w-[80px] bg-transparent text-xs h-9 px-3"
+                  asChild
+                >
+                  <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                    <Github className="w-3 h-3 mr-2 group-hover/btn:scale-110 transition-transform" />
+                    <span className="truncate">Code</span>
+                  </a>
+                </Button>
+              )}
+
+              {project.playstoreUrl && (
+                <a
+                  href={project.playstoreUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="play-store-btn group/btn flex-1 min-w-[80px] h-9 px-3 rounded-md text-xs font-medium inline-flex items-center justify-center transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
+                >
+                  <Smartphone className="w-3 h-3 mr-2 group-hover/btn:scale-110 transition-transform" />
+                  <span className="truncate">Play</span>
+                </a>
+              )}
+
+              {project.appstoreUrl && (
+                <a
+                  href={project.appstoreUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="app-store-btn group/btn flex-1 min-w-[80px] h-9 px-3 rounded-md text-xs font-medium inline-flex items-center justify-center transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
+                >
+                  <Smartphone className="w-3 h-3 mr-2 group-hover/btn:scale-110 transition-transform" />
+                  <span className="truncate">iOS</span>
+                </a>
+              )}
+
+              {project.companyUrl && (
+                <Button
+                  size="sm"
+                  variant="secondary"
+                  className="group/btn flex-1 min-w-[80px] text-xs h-9 px-3"
+                  asChild
+                >
+                  <a href={project.companyUrl} target="_blank" rel="noopener noreferrer">
+                    <Globe className="w-3 h-3 mr-2 group-hover/btn:scale-110 transition-transform" />
+                    <span className="truncate text-foreground">Website</span>
+                  </a>
+                </Button>
+              )}
+            </div>
+          </div>
         </div>
-      </div>
-    </section>
+      </CardContent>
+    </Card>
   )
 }

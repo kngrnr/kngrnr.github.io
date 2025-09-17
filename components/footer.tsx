@@ -8,7 +8,7 @@ export function Footer() {
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             {/* Brand */}
             <div>
-              <h3 className="font-bold text-lg mb-4">John Doe</h3>
+              <h3 className="font-bold text-lg mb-4">kngrnr</h3>
               <p className="text-muted-foreground text-sm leading-relaxed">
                 Full Stack Developer passionate about creating exceptional digital experiences and solving complex
                 problems through code.
@@ -71,7 +71,7 @@ export function Footer() {
 
           {/* Bottom Bar */}
           <div className="border-t pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-sm text-muted-foreground">© 2024 John Doe. All rights reserved.</p>
+            <p className="text-sm text-muted-foreground">© 2025 kngrnr. All rights reserved.</p>
             <p className="text-sm text-muted-foreground flex items-center gap-1">
               Made with <Heart className="w-4 h-4 text-red-500" /> using Next.js & Tailwind CSS
             </p>
