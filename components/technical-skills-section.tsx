@@ -1,15 +1,25 @@
 "use client"
 
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 
 const technicalSkills = [
   {
     name: "Swift",
     icon: (
-     <svg width="24px" height="24px" viewBox="-7.56 10.317 3.183 3.183" xmlns="http://www.w3.org/2000/svg"><path fill="#F05138" d="M-4.377 11.199v-0.096c-0.003 -0.069 -0.006 -0.141 -0.018 -0.21s-0.033 -0.135 -0.066 -0.198 -0.072 -0.12 -0.123 -0.168c-0.051 -0.051 -0.108 -0.09 -0.168 -0.123 -0.063 -0.033 -0.129 -0.054 -0.198 -0.066s-0.138 -0.018 -0.21 -0.018h-1.611c-0.018 0 -0.036 0 -0.051 0.003 -0.051 0.003 -0.105 0.006 -0.156 0.015s-0.102 0.024 -0.15 0.042c-0.015 0.006 -0.033 0.015 -0.048 0.021 -0.048 0.024 -0.09 0.054 -0.132 0.087 -0.012 0.012 -0.027 0.024 -0.039 0.036 -0.051 0.051 -0.09 0.108 -0.123 0.168 -0.033 0.063 -0.054 0.129 -0.066 0.198s-0.015 0.138 -0.018 0.21v1.611c0.003 0.069 0.006 0.141 0.018 0.21s0.033 0.135 0.066 0.198 0.072 0.12 0.123 0.168c0.051 0.051 0.108 0.09 0.168 0.123 0.063 0.033 0.129 0.054 0.198 0.066s0.138 0.018 0.21 0.018h1.611c0.069 -0.003 0.141 -0.006 0.21 -0.018s0.135 -0.033 0.198 -0.066 0.12 -0.072 0.168 -0.123c0.051 -0.051 0.09 -0.108 0.123 -0.168 0.033 -0.063 0.054 -0.129 0.066 -0.198s0.018 -0.138 0.018 -0.21v-1.512"/><path fill="#FFF" d="m-5.04 12.282 0.009 -0.036c0.132 -0.525 -0.189 -1.149 -0.735 -1.476 0.24 0.324 0.345 0.717 0.252 1.059 -0.009 0.03 -0.018 0.06 -0.03 0.09 -0.012 -0.009 -0.027 -0.018 -0.048 -0.027 0 0 -0.543 -0.336 -1.131 -0.927 -0.015 -0.015 0.315 0.471 0.687 0.864 -0.177 -0.099 -0.666 -0.456 -0.978 -0.738 0.039 0.063 0.084 0.126 0.132 0.183 0.258 0.33 0.597 0.735 1.002 1.047 -0.285 0.174 -0.687 0.189 -1.086 0 -0.099 -0.045 -0.192 -0.102 -0.279 -0.165 0.168 0.27 0.429 0.504 0.747 0.642 0.378 0.162 0.756 0.153 1.035 0.003 0 0 0.003 0 0.003 -0.003 0.012 -0.006 0.024 -0.015 0.036 -0.021 0.135 -0.069 0.399 -0.138 0.543 0.138 0.042 0.063 0.117 -0.297 -0.159 -0.633"/></svg>
+      <svg viewBox="0 0 24 24" className="w-8 h-8">
+        <path
+          fill="#FA7343"
+          d="M24 12.31c0-6.63-5.37-12-12-12s-12 5.37-12 12c0 6.63 5.37 12 12 12s12-5.37 12-12zm-12-8.5c4.69 0 8.5 3.81 8.5 8.5s-3.81 8.5-8.5 8.5-8.5-3.81-8.5-8.5 3.81-8.5 8.5-8.5z"
+        />
+        <path
+          fill="#FA7343"
+          d="M18.71 7.21c-1.92-2.28-4.8-3.74-8.01-3.74-.85 0-1.67.1-2.46.29 2.32.73 4.46 2.04 6.26 3.84 1.8 1.8 3.11 3.94 3.84 6.26.19-.79.29-1.61.29-2.46 0-1.42-.31-2.77-.92-3.99z"
+        />
+      </svg>
     ),
     color: "from-orange-400 to-red-500",
     category: "iOS",
+    description: "Native iOS development",
   },
   {
     name: "SwiftUI",
@@ -20,6 +30,7 @@ const technicalSkills = [
     ),
     color: "from-blue-400 to-blue-600",
     category: "iOS",
+    description: "Modern UI framework",
   },
   {
     name: "Flutter",
@@ -34,6 +45,7 @@ const technicalSkills = [
     ),
     color: "from-blue-400 to-cyan-500",
     category: "Cross-Platform",
+    description: "Cross-platform framework",
   },
   {
     name: "Dart",
@@ -47,6 +59,7 @@ const technicalSkills = [
     ),
     color: "from-blue-500 to-blue-700",
     category: "Language",
+    description: "Flutter programming language",
   },
   {
     name: "Android",
@@ -60,6 +73,7 @@ const technicalSkills = [
     ),
     color: "from-green-400 to-green-600",
     category: "Mobile",
+    description: "Native Android development",
   },
   {
     name: "Kotlin",
@@ -72,6 +86,7 @@ const technicalSkills = [
     ),
     color: "from-purple-500 to-pink-500",
     category: "Language",
+    description: "Modern Android language",
   },
   {
     name: "React Native",
@@ -85,6 +100,7 @@ const technicalSkills = [
     ),
     color: "from-cyan-400 to-blue-500",
     category: "Cross-Platform",
+    description: "React for mobile",
   },
   {
     name: "UIKit",
@@ -98,6 +114,7 @@ const technicalSkills = [
     ),
     color: "from-blue-500 to-indigo-600",
     category: "iOS",
+    description: "iOS UI framework",
   },
   {
     name: "Objective-C",
@@ -111,6 +128,7 @@ const technicalSkills = [
     ),
     color: "from-blue-600 to-gray-700",
     category: "Language",
+    description: "Legacy iOS language",
   },
   {
     name: "JavaScript",
@@ -118,12 +136,13 @@ const technicalSkills = [
       <svg viewBox="0 0 24 24" className="w-8 h-8">
         <path
           fill="#F7DF1E"
-          d="M0 0h24v24H0V0zm22.034 18.276c-.175-1.095-.888-2.015-3.003-2.873-.736-.345-1.554-.585-1.797-1.14-.091-.33-.105-.51-.046-.705.15-.646.915-.84 1.515-.66.39.12.75.42.976.9 1.034-.676 1.034-.676 1.755-1.125-.27-.42-.404-.601-.586-.78-.63-.705-1.469-1.065-2.834-1.034l-.705.089c-.676.165-1.32.525-1.71 1.005-1.14 1.291-.811 3.541.569 4.471 1.365 1.02 3.361 1.244 3.616 2.205.24 1.17-.87 1.545-1.966 1.41-.811-.18-1.26-.586-1.755-1.336l-1.83 1.051c.21.48.45.689.81 1.109 1.74 1.756 6.09 1.666 6.871-1.004.029-.09.24-.705.074-1.65l.046.067zm-8.983-7.245h-2.248c0 1.938-.009 3.864-.009 5.805 0 1.232.063 2.363-.138 2.711-.33.689-1.18.601-1.566.48-.396-.196-.597-.466-.83-.855-.063-.105-.11-.196-.127-.196l-1.825 1.125c.305.63.75 1.172 1.324 1.517.855.51 2.004.675 3.207.405.783-.226 1.458-.691 1.811-1.411.51-.93.402-2.07.397-3.346.012-2.054 0-4.109 0-6.179l.004-.056z"
+          d="M0 0h24v24H0V0zm22.034 18.276c-.175-1.095-.888-2.015-3.003-2.873-.736-.345-1.554-.585-1.797-1.14-.091-.33-.105-.51-.046-.705.15-.646.915-.84 1.515-.66.39.12.75.42.976.9 1.034-.676 1.034-.676 1.755-1.125-.27-.42-.404-.601-.586-.78-.63-.705-1.469-1.065-2.834-1.034l-.705.089c-.676.165-1.32.525-1.71 1.005-1.14 1.291-.811 3.541.569 4.471 1.365 1.02 3.361 1.244 3.616 2.205.24 1.17-.87 1.545-1.966 1.41-.811-.18-1.26-.586-1.755-1.336l-1.83 1.051c.21.48.45.689.81 1.109 1.74 1.756 6.09 1.666 6.871-1.004.029-.09.24-.705.074-1.65l.046.067zm-8.983-7.245h-2.248c0 1.938-.009 3.864-.009 5.805 0 1.232.063 2.363-.138 2.711-.33.689-1.18.601-1.566.48-.396-.196-.597-.466-.83-.855-.063-.105-.11-.196-.127-.196l-1.825 1.125c.305.63.75 1.172 1.324 1.517.855.51 2.004.675 3.207.405.783-.226 1.458-.691 1.811-1.411.51-.93.402-2.07.397-3.346.012-2.054 0-4.109 0-6.179l.004-.056zm7.031 9.75l-.232-2.718 10.059.003.23-2.622L5.412 4.41l.698 8.01h9.126l-.326 3.426-2.91.804-2.955-.81-.188-2.11H6.248l.33 4.171L12 19.351l5.379-1.443.744-8.157H8.531z"
         />
       </svg>
     ),
     color: "from-yellow-400 to-yellow-600",
     category: "Web",
+    description: "Web programming language",
   },
   {
     name: "HTML",
@@ -137,6 +156,7 @@ const technicalSkills = [
     ),
     color: "from-orange-500 to-red-600",
     category: "Web",
+    description: "Markup language",
   },
   {
     name: "CSS",
@@ -150,6 +170,7 @@ const technicalSkills = [
     ),
     color: "from-blue-500 to-blue-700",
     category: "Web",
+    description: "Styling language",
   },
   {
     name: "Node.js",
@@ -163,6 +184,7 @@ const technicalSkills = [
     ),
     color: "from-green-500 to-green-700",
     category: "Backend",
+    description: "JavaScript runtime",
   },
   {
     name: "Python",
@@ -170,12 +192,13 @@ const technicalSkills = [
       <svg viewBox="0 0 24 24" className="w-8 h-8">
         <path
           fill="#3776AB"
-          d="M14.25.18l.9.2.73.26.59.3.45.32.34.34.25.34.16.33.1.3.04.26.02.2-.01.13V8.5l-.05.63-.13.55-.21.46-.26.38-.3.31-.33.25-.35.19-.35.14-.33.1-.3.07-.26.04-.21.02H8.77l-.69.05-.59.14-.5.22-.41.27-.33.32-.27.35-.2.36-.15.37-.1.35-.07.32-.04.27-.02.21v3.06H3.17l-.21-.03-.28-.07-.32-.12-.35-.18-.36-.26-.36-.36-.35-.46-.32-.59-.28-.73-.21-.88-.14-1.05-.05-1.23.06-1.22.16-1.04.24-.87.32-.71.36-.57.4-.44.42-.33.42-.24.4-.16.36-.1.32-.05.24-.01h.16l.06.01h8.16v-.83H6.18l-.01-2.75-.02-.37.05-.34.11-.31.17-.28.25-.26.31-.23.38-.2.44-.18.51-.15.58-.12.64-.1.71-.06.77-.04.84-.02 1.27.05zm-6.3 1.98l-.23.33-.08.41.08.41.23.34.33.22.41.09.41-.09.33-.22.23-.34.08-.41-.08-.41-.23-.33-.33-.22-.41-.09-.41.09zm13.09 3.95l.28.06.32.12.35.18.36.27.36.35.35.47.32.59.28.73.21.88.14 1.04.05 1.23-.06 1.23-.16 1.04-.24.86-.32.71-.36.57-.4.45-.42.33-.42.24-.4.16-.36.09-.32.05-.24.02-.16-.01h-8.22v.82h5.84l.01 2.76.02.36-.05.34-.11.31-.17.29-.25.25-.31.24-.38.2-.44.17-.51.15-.58.13-.64.09-.71.07-.77.04-.84.01-1.27-.04-1.07-.14-.9-.2-.73-.25-.59-.3-.45-.33-.34-.34-.25-.34-.16-.33-.1-.3-.04-.25-.02-.2.01-.13v-5.34l.05-.64.13-.54.21-.46.26-.38.3-.32.33-.24.35-.2.35-.14.33-.1.3-.06.26-.04.21-.02.13-.01h5.84l.69-.05.59-.14.5-.21.41-.28.33-.32.27-.35.2-.36.15-.36.1-.35.07-.32.04-.28.02-.21V6.07h2.09l.14.01zm-6.47 14.25l-.23.33-.08.41.08.41.23.33.33.23.41.08.41-.08.33-.23.23-.33.08-.41-.08-.41-.23-.33-.33-.23-.41-.08-.41.08z"
+          d="M14.25.18l.9.2.73.26.59.3.45.32.34.34.25.34.16.33.1.3.04.26.02.2-.01.13V8.5l-.05.63-.13.55-.21.46-.26.38-.3.31-.33.25-.35.19-.35.14-.33.1-.3.07-.26.04-.21.02H8.77l-.69.05-.59.14-.5.22-.41.27-.33.32-.27.35-.2.36-.15.37-.1.35-.07.32-.04.27-.02.21v3.06H3.17l-.21-.03-.28-.07-.32-.12-.35-.18-.36-.26-.36-.36-.35-.46-.32-.59-.28-.73-.21-.88-.14-1.05-.05-1.23.06-1.22.16-1.04.24-.87.32-.71.36-.57.4-.44.42-.33.42-.24.4-.16.36-.1.32-.05.24-.01h.16l.06.01h8.16v-.83H6.18l-.01-2.75-.02-.37.05-.34.11-.31.17-.28.25-.26.31-.23.38-.2.44-.18.51-.15.58-.13.64-.1.71-.07.77-.04.84-.02 1.27.05zm-6.3 1.98l-.23.33-.08.41.08.41.23.34.33.22.41.09.41-.09.33-.22.23-.34.08-.41-.08-.41-.23-.33-.33-.22-.41-.09-.41.09zm13.09 3.95l.28.06.32.12.35.18.36.27.36.35.35.47.32.59.28.73.21.88.14 1.04.05 1.23-.06 1.23-.16 1.04-.24.86-.32.71-.36.57-.4.45-.42.33-.42.24-.4.16-.36.09-.32.05-.24.02-.16-.01h-8.22v.82h5.84l.01 2.76.02.36-.05.34-.11.31-.17.29-.25.25-.31.24-.38.2-.44.17-.51.15-.58.13-.64.09-.71.07-.77.04-.84.01-1.27-.04-1.07-.14-.9-.2-.73-.25-.59-.3-.45-.33-.34-.34-.25-.34-.16-.33-.1-.3-.04-.25-.02-.2.01-.13v-5.34l.05-.64.13-.54.21-.46.26-.38.3-.32.33-.24.35-.2.35-.14.33-.1.3-.06.26-.04.21-.02.13-.01h5.84l.69-.05.59-.14.5-.21.41-.28.33-.32.27-.35.2-.36.15-.36.1-.35.07-.32.04-.28.02-.21V6.07h2.09l.14.01zm-6.47 14.25l-.23.33-.08.41.08.41.23.33.33.23.41.08.41-.08.33-.23.23-.33.08-.41-.08-.41-.23-.33-.33-.23-.41-.08-.41.08z"
         />
       </svg>
     ),
     color: "from-blue-400 to-yellow-500",
     category: "Language",
+    description: "Versatile programming language",
   },
   {
     name: "C",
@@ -189,6 +212,7 @@ const technicalSkills = [
     ),
     color: "from-gray-500 to-gray-700",
     category: "Language",
+    description: "System programming language",
   },
   {
     name: "REST API",
@@ -202,6 +226,7 @@ const technicalSkills = [
     ),
     color: "from-orange-400 to-red-500",
     category: "API",
+    description: "Web service architecture",
   },
   {
     name: "ReactJS",
@@ -215,29 +240,43 @@ const technicalSkills = [
     ),
     color: "from-cyan-400 to-blue-500",
     category: "Web",
+    description: "JavaScript library",
   },
 ]
 
-const categories = ["iOS", "Cross-Platform", "Mobile", "Language", "Web", "Backend", "API"]
+const categories = [
+  { name: "iOS", icon: "📱", color: "from-blue-500 to-purple-600" },
+  { name: "Cross-Platform", icon: "🔄", color: "from-green-500 to-blue-500" },
+  { name: "Mobile", icon: "📲", color: "from-green-400 to-emerald-600" },
+  { name: "Language", icon: "💻", color: "from-purple-500 to-pink-500" },
+  { name: "Web", icon: "🌐", color: "from-orange-500 to-red-500" },
+  { name: "Backend", icon: "⚙️", color: "from-gray-600 to-gray-800" },
+  { name: "API", icon: "🔗", color: "from-indigo-500 to-blue-600" },
+]
 
 export function TechnicalSkillsSection() {
   const sectionRef = useRef<HTMLElement>(null)
+  const [activeCategory, setActiveCategory] = useState<string | null>(null)
+  const [visibleSkills, setVisibleSkills] = useState<Set<string>>(new Set())
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            const cards = entry.target.querySelectorAll(".skill-card")
-            cards.forEach((card, index) => {
+            const skillCards = entry.target.querySelectorAll(".skill-card")
+            skillCards.forEach((card, index) => {
               setTimeout(() => {
-                card.classList.add("animate-in")
-              }, index * 100)
+                const skillName = card.getAttribute("data-skill")
+                if (skillName) {
+                  setVisibleSkills((prev) => new Set([...prev, skillName]))
+                }
+              }, index * 150)
             })
           }
         })
       },
-      { threshold: 0.1 },
+      { threshold: 0.1, rootMargin: "50px" },
     )
 
     if (sectionRef.current) {
@@ -248,94 +287,123 @@ export function TechnicalSkillsSection() {
   }, [])
 
   return (
-    <section ref={sectionRef} id="skills" className="py-20 bg-gradient-to-br from-slate-50/0 to-blue-50/0">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4 text-balance">Technical Skills</h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto text-pretty">
-            A comprehensive toolkit of modern technologies and frameworks I use to build exceptional applications
+    <section ref={sectionRef} id="skills" className="py-24 bg-transparent relative overflow-hidden">
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-primary/5 to-secondary/5 rounded-full blur-3xl animate-pulse" />
+        <div
+          className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-br from-accent/5 to-primary/5 rounded-full blur-3xl animate-pulse"
+          style={{ animationDelay: "2s" }}
+        />
+      </div>
+
+      <div className="container mx-auto px-6 relative">
+        <div className="text-center mb-20">
+          <h2 className="text-5xl font-bold text-foreground mb-6 text-balance">
+            Technical{" "}
+            <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Expertise</span>
+          </h2>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto text-pretty leading-relaxed">
+            A curated collection of cutting-edge technologies and frameworks that power modern applications
           </p>
         </div>
 
-        {/* Category-based layout */}
-        <div className="space-y-12">
-          {categories.map((category) => {
-            const categorySkills = technicalSkills.filter((skill) => skill.category === category)
-            if (categorySkills.length === 0) return null
+        <div className="max-w-7xl mx-auto">
+          {/* Floating skill cards in a masonry-like layout */}
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6 lg:gap-8">
+            {technicalSkills.map((skill, index) => (
+              <div
+                key={skill.name}
+                data-skill={skill.name}
+                className={`skill-card group relative transform transition-all duration-700 ease-out ${
+                  visibleSkills.has(skill.name)
+                    ? "translate-y-0 opacity-100 scale-100"
+                    : "translate-y-12 opacity-0 scale-95"
+                }`}
+                style={{
+                  transitionDelay: `${index * 100}ms`,
+                  animationDelay: `${index * 100}ms`,
+                }}
+                onMouseEnter={() => setActiveCategory(skill.category)}
+                onMouseLeave={() => setActiveCategory(null)}
+              >
+                {/* Main card */}
+                <div className="relative p-6 bg-card/80 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 border border-border/50 hover:border-border group-hover:-translate-y-2 group-hover:rotate-1">
+                  {/* Gradient background overlay */}
+                  <div
+                    className={`absolute inset-0 bg-gradient-to-br ${skill.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500 rounded-2xl`}
+                  />
 
-            return (
-              <div key={category} className="space-y-6">
-                <h3 className="text-2xl font-semibold text-gray-800 text-center">{category}</h3>
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6">
-                  {categorySkills.map((skill, index) => (
-                    <div
-                      key={skill.name}
-                      className={`skill-card group relative p-6 bg-background  rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 opacity-0 translate-y-8 border border-border overflow-hidden`}
-                      style={{ transitionDelay: `${index * 100}ms` }}
-                    >
-                      {/* Gradient background overlay */}
+                  {/* Animated border glow */}
+                  <div
+                    className={`absolute -inset-0.5 bg-gradient-to-r ${skill.color} opacity-0 group-hover:opacity-20 blur-sm transition-all duration-500 rounded-2xl`}
+                  />
+
+                  <div className="relative z-10 flex flex-col items-center space-y-4">
+                    {/* Icon with floating animation */}
+                    <div className="relative">
                       <div
-                        className={`absolute inset-0 bg-gradient-to-br ${skill.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}
+                        className={`absolute inset-0 bg-gradient-to-r ${skill.color} rounded-2xl blur-xl opacity-0 group-hover:opacity-30 transition-all duration-500 scale-150 animate-pulse`}
                       />
-
-                      {/* Animated border */}
-                      <div
-                        className={`absolute inset-0 rounded-2xl bg-gradient-to-r ${skill.color} opacity-0 group-hover:opacity-20 blur-sm transition-all duration-300 group-hover:blur-none`}
-                      />
-
-                      <div className="relative z-10 flex flex-col items-center space-y-4">
-                        {/* Icon container with hover animation */}
-                        <div className="relative">
-                          <div
-                            className={`absolute inset-0 bg-gradient-to-r ${skill.color} rounded-full blur-lg opacity-0 group-hover:opacity-30 transition-all duration-300 scale-150`}
-                          />
-                          <div className="relative p-3 bg-muted rounded-full group-hover:bg-background  transition-colors duration-300 group-hover:scale-110 transform">
-                            {skill.icon}
-                          </div>
-                        </div>
-
-                        {/* Skill name */}
-                        <h4 className="text-sm font-semibold text-foreground text-center group-hover:text-foreground transition-colors duration-300">
-                          {skill.name}
-                        </h4>
-
-                        {/* Animated progress bar */}
-                        <div className="w-full h-1 bg-muted rounded-full overflow-hidden">
-                          <div
-                            className={`h-full bg-gradient-to-r ${skill.color} transform -translate-x-full group-hover:translate-x-0 transition-transform duration-700 ease-out`}
-                          />
-                        </div>
+                      <div className="relative p-4 bg-gradient-to-br from-background/50 to-card rounded-2xl group-hover:bg-card transition-all duration-300 group-hover:scale-110 transform shadow-inner">
+                        <div className="group-hover:animate-bounce">{skill.icon}</div>
                       </div>
-
-                      {/* Floating particles effect */}
-                      <div className="absolute top-2 right-2 w-2 h-2 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse" />
-                      <div
-                        className="absolute bottom-2 left-2 w-1 h-1 bg-gradient-to-r from-pink-400 to-red-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-pulse"
-                        style={{ animationDelay: "0.5s" }}
-                      />
                     </div>
-                  ))}
+
+                    {/* Skill name with typewriter effect */}
+                    <div className="text-center space-y-2">
+                      <h4 className="text-sm font-bold text-foreground group-hover:text-foreground transition-colors duration-300">
+                        {skill.name}
+                      </h4>
+                      <p className="text-xs text-muted-foreground group-hover:text-muted-foreground transition-colors duration-300 opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0">
+                        {skill.description}
+                      </p>
+                    </div>
+
+                    {/* Category badge */}
+                    <div
+                      className={`absolute -top-2 -right-2 px-2 py-1 bg-gradient-to-r ${skill.color} text-white text-xs font-medium rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-75 group-hover:scale-100 shadow-lg`}
+                    >
+                      {skill.category}
+                    </div>
+                  </div>
+
+                  {/* Floating particles */}
+                  <div className="absolute top-3 right-3 w-2 h-2 bg-gradient-to-r from-primary to-secondary rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-ping" />
+                  <div
+                    className="absolute bottom-3 left-3 w-1.5 h-1.5 bg-gradient-to-r from-accent to-destructive rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700 animate-ping"
+                    style={{ animationDelay: "0.5s" }}
+                  />
                 </div>
               </div>
-            )
-          })}
+            ))}
+          </div>
         </div>
 
-        {/* Skills summary */}
-        <div className="mt-16 text-center">
-          <div className="inline-flex items-center space-x-2 bg-white px-6 py-3 rounded-full shadow-lg border border-gray-100">
-            <div className="w-3 h-3 bg-gradient-to-r from-green-400 to-blue-500 rounded-full animate-pulse" />
-            <span className="text-gray-700 font-medium">{technicalSkills.length} Technologies Mastered</span>
+        <div className="mt-20 text-center">
+          <div className="inline-flex items-center justify-center space-x-8 bg-card/80 backdrop-blur-sm px-8 py-6 rounded-2xl shadow-lg border border-border">
+            <div className="flex items-center space-x-3">
+              <div className="w-4 h-4 bg-gradient-to-r from-primary to-secondary rounded-full animate-pulse" />
+              <span className="text-foreground font-semibold">{technicalSkills.length} Technologies</span>
+            </div>
+            <div className="w-px h-6 bg-border" />
+            <div className="flex items-center space-x-3">
+              <div
+                className="w-4 h-4 bg-gradient-to-r from-secondary to-accent rounded-full animate-pulse"
+                style={{ animationDelay: "1s" }}
+              />
+              <span className="text-foreground font-semibold">{categories.length} Categories</span>
+            </div>
+            <div className="w-px h-6 bg-border" />
+            <div className="flex items-center space-x-3">
+              <div
+                className="w-4 h-4 bg-gradient-to-r from-accent to-destructive rounded-full animate-pulse"
+                style={{ animationDelay: "2s" }}
+              />
+              <span className="text-foreground font-semibold">Always Learning</span>
+            </div>
           </div>
         </div>
       </div>
-
-      <style jsx>{`
-        .skill-card.animate-in {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      `}</style>
     </section>
   )
 }

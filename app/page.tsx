@@ -5,7 +5,8 @@ import { BentoProjectsSection } from "@/components/bento-projects-section"
 // import { AnimatedSkillsSection } from "@/components/animated-skills-section"
 import { TechnicalSkillsSection } from "@/components/technical-skills-section"
 import { WorkExperienceSection } from "@/components/work-experience-section"
-import { FloatingContactSection } from "@/components/floating-contact-section"
+// import { FloatingContactSection } from "@/components/floating-contact-section"
+import { ContactSection } from "@/components/contact-section"
 import { Footer } from "@/components/footer"
 import { ParallaxContainer } from "@/components/parallax-container"
 import { AnimatedBackground } from "@/components/animated-background"
@@ -21,10 +22,9 @@ export default function HomePage() {
             <ProfessionalHeroSection />
             <InteractiveAboutSection />
             <BentoProjectsSection />
-            {/* <AnimatedSkillsSection /> */}
             <WorkExperienceSection />
             <TechnicalSkillsSection />
-            <FloatingContactSection />
+            <ContactSection />
           </main>
         </ParallaxContainer>
         <Footer />
