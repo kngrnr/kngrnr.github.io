@@ -1,11 +1,63 @@
 "use client"
 
-import { Building2, MapPin, Calendar, FolderOpen } from "lucide-react"
+import { Building2, MapPin, Calendar, Laptop, Rocket, Palette } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { useEffect, useRef, useState } from "react"
-import { workExperiences, type Company } from "@/data/work-experiences"
 
+const workExperiences = [
+  {
+    id: 1,
+    company: "TechCorp Solutions",
+    position: "Senior Full Stack Developer",
+    location: "San Francisco, CA",
+    startDate: "Jan 2022",
+    endDate: "Present",
+    icon: Laptop, // replaced emoji with Lucide icon
+    iconColor: "text-blue-600",
+    responsibilities: [
+      "Led development of microservices architecture serving 1M+ users",
+      "Mentored junior developers and conducted code reviews",
+      "Implemented CI/CD pipelines reducing deployment time by 60%",
+      "Collaborated with product team to deliver features ahead of schedule",
+    ],
+    technologies: ["React", "Node.js", "PostgreSQL", "AWS", "Docker"],
+  },
+  {
+    id: 2,
+    company: "StartupXYZ",
+    position: "Frontend Developer",
+    location: "Austin, TX",
+    startDate: "Jun 2020",
+    endDate: "Dec 2021",
+    icon: Rocket, // replaced emoji with Lucide icon
+    iconColor: "text-green-600",
+    responsibilities: [
+      "Built responsive web applications using React and TypeScript",
+      "Optimized application performance improving load times by 40%",
+      "Integrated third-party APIs and payment processing systems",
+      "Participated in agile development processes and sprint planning",
+    ],
+    technologies: ["React", "TypeScript", "Tailwind CSS", "Firebase", "Stripe"],
+  },
+  {
+    id: 3,
+    company: "Digital Agency Pro",
+    position: "Junior Web Developer",
+    location: "Remote",
+    startDate: "Mar 2019",
+    endDate: "May 2020",
+    icon: Palette, // replaced emoji with Lucide icon
+    iconColor: "text-purple-600",
+    responsibilities: [
+      "Developed custom WordPress themes and plugins for clients",
+      "Created pixel-perfect designs from Figma mockups",
+      "Maintained and updated existing client websites",
+      "Provided technical support and training to clients",
+    ],
+    technologies: ["WordPress", "PHP", "JavaScript", "CSS", "MySQL"],
+  },
+]
 
 export function WorkExperienceSection() {
   const [visibleItems, setVisibleItems] = useState<number[]>([])
@@ -51,93 +103,67 @@ export function WorkExperienceSection() {
         </div>
 
         <div className="max-w-4xl mx-auto relative">
-          <div className="space-y-12">
-            {workExperiences.map((company, companyIndex) => {
-              const IconComponent = company.icon
+          <div className="space-y-8">
+            {workExperiences.map((experience, index) => {
+              const IconComponent = experience.icon
               return (
                 <div
-                  key={company.id}
+                  key={experience.id}
                   ref={(el) => {
-                    itemRefs.current[companyIndex] = el
+                    itemRefs.current[index] = el
                   }}
-                  data-index={companyIndex}
+                  data-index={index}
                   className={`transform transition-all duration-700 ease-out ${
-                    visibleItems.includes(companyIndex) ? "translate-x-0 opacity-100" : "translate-x-8 opacity-0"
+                    visibleItems.includes(index) ? "translate-x-0 opacity-100" : "translate-x-8 opacity-0"
                   }`}
-                  style={{ transitionDelay: `${companyIndex * 150}ms` }}
+                  style={{ transitionDelay: `${index * 150}ms` }}
                 >
                   <div className="relative">
-                    {/* Company Header */}
-                    <Card className="group hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border-l-4 border-l-primary/20 hover:border-l-primary hover:scale-[1.02] transform-gpu mb-6">
+                    <Card className="group hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border-l-4 border-l-primary/20 hover:border-l-primary hover:scale-[1.02] transform-gpu">
                       <CardContent className="p-6 relative overflow-hidden">
                         <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
-                        <div className="flex flex-col md:flex-row md:items-center gap-4 relative z-10">
-                          {/* Company Icon */}
+                        <div className="flex flex-col md:flex-row md:items-start gap-4 relative z-10">
+                          {/* Company Icon and Info */}
                           <div className="flex-shrink-0">
-                            <div className="w-16 h-16 bg-background border-2 border-primary/20 rounded-lg flex items-center justify-center group-hover:border-primary/40 group-hover:scale-110 transition-all duration-300 group-hover:rotate-3 shadow-sm">
+                            <div className="w-12 h-12 bg-background border-2 border-primary/20 rounded-lg flex items-center justify-center group-hover:border-primary/40 group-hover:scale-110 transition-all duration-300 group-hover:rotate-3 shadow-sm">
                               <IconComponent
-                                className={`w-8 h-8 ${company.iconColor} group-hover:scale-110 transition-transform duration-300`}
+                                className={`w-6 h-6 ${experience.iconColor} group-hover:scale-110 transition-transform duration-300`}
                               />
                             </div>
                           </div>
 
-                          {/* Company Info */}
                           <div className="flex-grow">
-                            <div className="flex flex-col md:flex-row md:items-center md:justify-between">
+                            {/* Header */}
+                            <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-3">
                               <div>
-                                <h3 className="text-2xl font-bold text-foreground group-hover:text-primary transition-colors duration-300 group-hover:translate-x-1">
-                                  {company.name}
+                                <h3 className="text-xl font-semibold text-foreground group-hover:text-primary transition-colors duration-300 group-hover:translate-x-1">
+                                  {experience.position}
                                 </h3>
                                 <div className="flex items-center gap-2 text-muted-foreground mt-1 group-hover:translate-x-1 transition-transform duration-300">
-                                  <MapPin className="w-4 h-4 group-hover:text-primary transition-colors duration-300" />
-                                  <span className="font-medium">{company.location}</span>
+                                  <Building2 className="w-4 h-4 group-hover:text-primary transition-colors duration-300" />
+                                  <span className="font-medium">{experience.company}</span>
                                 </div>
                               </div>
 
-                              <div className="flex items-center gap-1 text-sm text-muted-foreground group-hover:text-foreground transition-colors duration-300 mt-2 md:mt-0">
-                                <Calendar className="w-4 h-4" />
-                                <span>
-                                  {company.startDate} - {company.endDate}
-                                </span>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </CardContent>
-                    </Card>
-
-                    {/* Projects */}
-                    <div className="space-y-6 ml-4 border-l-2 border-primary/10 pl-6">
-                      {company.projects.map((project, projectIndex) => (
-                        <Card
-                          key={project.id}
-                          className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border-l-2 border-l-primary/10 hover:border-l-primary/30"
-                        >
-                          <CardContent className="p-6">
-                            <div className="flex items-start gap-3 mb-4">
-                              <div className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-300">
-                                <FolderOpen className="w-4 h-4 text-primary" />
-                              </div>
-                              <div className="flex-grow">
-                                <div className="flex items-center gap-2 mb-1">
-                                  <h4 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors duration-300">
-                                    {project.name}
-                                  </h4>
-                                  <span className="text-xs bg-muted/50 text-muted-foreground px-2 py-1 rounded-full border">
-                                    {project.location}
+                              <div className="flex flex-col md:items-end gap-1 mt-2 md:mt-0">
+                                <div className="flex items-center gap-1 text-sm text-muted-foreground group-hover:text-foreground transition-colors duration-300">
+                                  <Calendar className="w-4 h-4" />
+                                  <span>
+                                    {experience.startDate} - {experience.endDate}
                                   </span>
                                 </div>
-                                <p className="text-sm text-muted-foreground">
-                                  {project.description}
-                                </p>
+                                <div className="flex items-center gap-1 text-sm text-muted-foreground group-hover:text-foreground transition-colors duration-300">
+                                  <MapPin className="w-4 h-4" />
+                                  <span>{experience.location}</span>
+                                </div>
                               </div>
                             </div>
 
-                            {/* Project Responsibilities */}
+                            {/* Responsibilities */}
                             <div className="mb-4">
                               <ul className="space-y-2">
-                                {project.responsibilities.map((responsibility, idx) => (
+                                {experience.responsibilities.map((responsibility, idx) => (
                                   <li
                                     key={idx}
                                     className="flex items-start gap-2 text-muted-foreground group-hover:translate-x-1 transition-transform duration-300"
@@ -152,9 +178,9 @@ export function WorkExperienceSection() {
                               </ul>
                             </div>
 
-                            {/* Project Technologies */}
+                            {/* Technologies */}
                             <div className="flex flex-wrap gap-2">
-                              {project.technologies.map((tech, idx) => (
+                              {experience.technologies.map((tech, idx) => (
                                 <Badge
                                   key={idx}
                                   variant="secondary"
@@ -165,10 +191,10 @@ export function WorkExperienceSection() {
                                 </Badge>
                               ))}
                             </div>
-                          </CardContent>
-                        </Card>
-                      ))}
-                    </div>
+                          </div>
+                        </div>
+                      </CardContent>
+                    </Card>
                   </div>
                 </div>
               )

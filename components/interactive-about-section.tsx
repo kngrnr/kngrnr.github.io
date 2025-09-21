@@ -77,11 +77,11 @@ export function InteractiveAboutSection() {
               About <span className="text-primary">Me</span>
             </h2>
             <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-            About Me
-            I’m a results-driven Mobile Developer with 10 years of experience in software engineering, including 3.5 years as a mainframe programmer, and 6 years dedicated to building high-performance iOS and Android apps since 2019. Skilled in Flutter, Swift, and modern architectures like BLoC and MVVM, I focus on creating scalable, intuitive apps with seamless user experiences, integrating REST/GraphQL APIs, and setting up CI/CD pipelines with Firebase, Fastlane, and CodeMagic. Passionate about clean, maintainable code, I love turning complex problems into simple, impactful mobile solutions that users genuinely enjoy.
+              I'm a passionate mobile developer with expertise in Flutter, iOS, and Android development. I love creating
+              innovative mobile solutions that solve real-world problems and deliver exceptional user experiences.
             </p>
 
-            {/* <div className="space-y-4 mb-8">
+            <div className="space-y-4 mb-8">
               <div className="flex items-center gap-3">
                 <Badge variant="secondary" className="bg-primary/10 text-primary">
                   5+ Years
@@ -100,7 +100,7 @@ export function InteractiveAboutSection() {
                 </Badge>
                 <span className="text-muted-foreground">Total Downloads</span>
               </div>
-            </div> */}
+            </div>
           </div>
 
           <div
