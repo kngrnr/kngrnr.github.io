@@ -84,22 +84,22 @@ export function InteractiveAboutSection() {
             <div className="space-y-4 mb-8">
               <div className="flex items-center gap-3">
                 <Badge variant="secondary" className="bg-primary/10 text-primary">
-                  5+ Years
+                  6+ Years
                 </Badge>
                 <span className="text-muted-foreground">Mobile Development Experience</span>
               </div>
-              <div className="flex items-center gap-3">
+              {/* <div className="flex items-center gap-3">
                 <Badge variant="secondary" className="bg-accent/10 text-accent">
                   20+ Apps
                 </Badge>
                 <span className="text-muted-foreground">Successfully Launched</span>
-              </div>
-              <div className="flex items-center gap-3">
+              </div> */}
+              {/* <div className="flex items-center gap-3">
                 <Badge variant="secondary" className="bg-primary/10 text-primary">
                   500K+
                 </Badge>
                 <span className="text-muted-foreground">Total Downloads</span>
-              </div>
+              </div> */}
             </div>
           </div>
 

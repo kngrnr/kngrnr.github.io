@@ -19,7 +19,7 @@ export function SkillsSection() {
                   <div className="space-y-4">
                     {category.skills.map((skill, skillIndex) => (
                       <div key={skillIndex}>
-                        <div className="flex justify-between mb-2">
+                        <div className="flex justify-between mb-1">
                           <span className="text-sm font-medium">{skill.name}</span>
                           <span className="text-sm text-muted-foreground">{skill.level}%</span>
                         </div>

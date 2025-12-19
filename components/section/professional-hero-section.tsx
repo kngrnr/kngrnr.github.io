@@ -3,43 +3,16 @@
 import { useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Download, Mail, MapPin, Github, Linkedin, Twitter } from "lucide-react"
+import { technicalSkills } from "@/data/technical-skills"
 
 export function ProfessionalHeroSection() {
   const [isVisible, setIsVisible] = useState(false)
-  const [currentProject, setCurrentProject] = useState(0)
-
-  const projects = [
-    {
-      name: "HALO Financial",
-      description: "Advanced trading platform with real-time analytics",
-      image: "/images/halo-financial-mockup.jpg",
-      tech: ["Flutter", "Firebase", "Real-time Data"],
-    },
-    {
-      name: "PikFly Delivery",
-      description: "Location-based delivery service with live tracking",
-      image: "/images/pikfly-delivery-mockup.jpg",
-      tech: ["React Native", "Maps API", "Real-time GPS"],
-    },
-    {
-      name: "Macroverse Comics",
-      description: "Next-gen digital comics with interactive features",
-      image: "/images/macroverse-comics-mockup.jpg",
-      tech: ["Flutter", "Animation", "Interactive UI"],
-    },
-  ]
 
   useEffect(() => {
     setIsVisible(true)
 
-    // Auto-rotate projects
-    const interval = setInterval(() => {
-      setCurrentProject((prev) => (prev + 1) % projects.length)
-    }, 4000)
-
     const handleReset = () => {
       setIsVisible(false)
-      setCurrentProject(0)
       // Re-trigger visibility after a short delay to restart animations
       setTimeout(() => setIsVisible(true), 100)
     }
@@ -47,7 +20,6 @@ export function ProfessionalHeroSection() {
     window.addEventListener("resetAnimations", handleReset)
 
     return () => {
-      clearInterval(interval)
       window.removeEventListener("resetAnimations", handleReset)
     }
   }, [])
@@ -138,13 +110,16 @@ export function ProfessionalHeroSection() {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="group">
+              {/* <Button size="lg" className="group">
                 View Portfolio
                 <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </Button>
-              <Button variant="outline" size="lg" className="group bg-transparent">
+              </Button> */}
+              <Button variant="outline" size="lg" className="group bg-transparent" onClick={openResume}
+            
+              >
                 <Download className="mr-2 w-4 h-4" />
                 Download Resume
+                
               </Button>
               <Button variant="ghost" size="lg" className="group">
                 <Mail className="mr-2 w-4 h-4" />
@@ -153,48 +128,36 @@ export function ProfessionalHeroSection() {
             </div>
           </div>
 
-          {/* Right side - Project showcase */}
+          {/* Right side - Technical Skills */}
+
+          
           <div
             className={`transition-all duration-1000 delay-300 ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"}`}
           >
             <div className="relative">
-              <div className="bg-card rounded-2xl p-8 shadow-2xl">
-                <div className="flex items-center justify-between mb-6">
-                  <h3 className="text-lg font-semibold">Featured Projects</h3>
-                  <div className="flex gap-2">
-                    {projects.map((_, index) => (
-                      <button
-                        key={index}
-                        onClick={() => setCurrentProject(index)}
-                        className={`w-2 h-2 rounded-full transition-all ${
-                          index === currentProject ? "bg-primary w-6" : "bg-muted-foreground/30"
-                        }`}
-                      />
-                    ))}
-                  </div>
-                </div>
+              <div className="mb-8 text-left">
+                <h3 className="text-2xl font-bold mb-3 hover:text-primary transition-colors cursor-pointer">Tech Stack</h3>
+                <p className="text-lg text-muted-foreground hover:text-foreground transition-colors cursor-pointer">Technologies I work with</p>
+              </div>
 
-                <div className="relative overflow-hidden rounded-lg mb-6">
-                  <img
-                    src={projects[currentProject].image || "/placeholder.svg"}
-                    alt={projects[currentProject].name}
-                    className="w-full h-64 object-cover transition-all duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-                  <div className="absolute bottom-4 left-4 text-white">
-                    <h4 className="text-xl font-bold mb-1">{projects[currentProject].name}</h4>
-                    <p className="text-sm opacity-90">{projects[currentProject].description}</p>
-                  </div>
-                </div>
-
-                <div className="flex flex-wrap gap-2">
-                  {projects[currentProject].tech.map((tech) => (
-                    <span
-                      key={tech}
-                      className="px-3 py-1 bg-primary/90 text-primary-foreground dark:bg-primary dark:text-primary-foreground text-sm rounded-full font-medium border border-primary/50 shadow-sm"
+              {/* Technical Skills Grid */}
+              <div className="flex justify-start mt-8">
+                <div className="inline-grid grid-rows-3 auto-rows-max grid-flow-col gap-2">
+                  {technicalSkills.map((skill) => (
+                    <div
+                      key={skill.name}
+                      className="flex flex-col items-center text-center"
                     >
-                      {tech}
-                    </span>
+                      {/* Technology card */}
+                      <div className="w-20 h-20 bg-background rounded-lg flex flex-col items-center justify-center shadow-sm border border-border/20 p-3 hover:scale-105 hover:shadow-md transition-all duration-200 cursor-pointer">
+                        <div className="w-6 h-6 mb-1">
+                          {skill.icon}
+                        </div>
+                        <h4 className="font-semibold text-xs text-foreground text-center leading-tight">
+                          {skill.name}
+                        </h4>
+                      </div>
+                    </div>
                   ))}
                 </div>
               </div>
@@ -209,3 +172,12 @@ export function ProfessionalHeroSection() {
     </section>
   )
 }
+
+
+const openResume = () => {
+  window.open(
+    "https://drive.usercontent.google.com/download?id=1HDBIBSLIFIpzz1eVQC7rPi_SwpR4sS7z&export=download&authuser=0&confirm=t&uuid=fc18a33c-cc0f-44c3-9259-52b5d0557acb&at=ANTm3cwFcSNPWsPSNTnO1Qf52ELs:1766150539571",
+    "_blank",
+    "noopener,noreferrer"
+  );
+};
