@@ -10,7 +10,7 @@ export function Footer() {
             <div>
               <h3 className="font-bold text-lg mb-4">kngrnr</h3>
               <p className="text-muted-foreground text-sm leading-relaxed">
-                Full Stack Developer passionate about creating exceptional digital experiences and solving complex
+                Mobile Developer passionate about creating exceptional digital experiences and solving complex
                 problems through code.
               </p>
             </div>

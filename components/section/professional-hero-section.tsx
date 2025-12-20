@@ -59,9 +59,9 @@ export function ProfessionalHeroSection() {
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-black mb-6 leading-tight">
-              <span className="text-primary">Transforming Ideas</span>
+              <span className="text-primary">I Build Mobile Apps That Turn Ideas</span>
               <br />
-              into Mobile
+              into Reality Ideas
               <br />
               <span className="text-accent [background:linear-gradient(to_right,hsl(var(--primary)),hsl(var(--accent)))] bg-clip-text [-webkit-background-clip:text] [-webkit-text-fill-color:transparent] [&:not(:has(.bg-clip-text))]:text-accent">
                 Experiences
@@ -69,11 +69,16 @@ export function ProfessionalHeroSection() {
             </h1>
 
             <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed">
-              Senior Mobile Developer specializing in <strong className="text-foreground">Flutter</strong>,
-              <strong className="text-foreground"> iOS</strong>, and{" "}
-              <strong className="text-foreground">Android</strong>. I build scalable apps that users love and businesses
-              depend on.
+              Senior Mobile Developer specializing in{" "}
+              <strong className="text-foreground">Flutter</strong> and native{" "}
+              <strong className="text-foreground">Android</strong> and{" "}
+              <strong className="text-foreground">iOS</strong>. I craft scalable, high-performance apps that users love and businesses rely on.
             </p>
+
+            <p className="text-lg text-muted-foreground mt-4 mb-8">
+              When I’m not coding, I enjoy traveling around Japan and playing the guitar — it keeps me inspired and creative.
+            </p>
+
 
             {/* Key achievements */}
             <div className="flex items-center gap-4 mb-8">
@@ -93,14 +98,14 @@ export function ProfessionalHeroSection() {
               >
                 <Linkedin className="w-5 h-5 text-blue-500 group-hover:scale-110 transition-transform" />
               </a>
-              <a
+              {/* <a
                 href="https://twitter.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center w-12 h-12 rounded-full bg-sky-500/10 hover:bg-sky-500/20 transition-colors group"
               >
                 <Twitter className="w-5 h-5 text-sky-500 group-hover:scale-110 transition-transform" />
-              </a>
+              </a> */}
               <a
                 href="mailto:kngrnr.io@gmail.com"
                 className="flex items-center justify-center w-12 h-12 rounded-full bg-accent/10 hover:bg-accent/20 transition-colors group"
@@ -115,48 +120,49 @@ export function ProfessionalHeroSection() {
                 <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Button> */}
               <Button variant="outline" size="lg" className="group bg-transparent" onClick={openResume}
-            
+
               >
                 <Download className="mr-2 w-4 h-4" />
                 Download Resume
-                
               </Button>
-              <Button variant="ghost" size="lg" className="group">
+              {/* <Button variant="ghost" size="lg" className="group">
                 <Mail className="mr-2 w-4 h-4" />
                 Contact Me
-              </Button>
+              </Button> */}
             </div>
           </div>
 
           {/* Right side - Technical Skills */}
 
-          
+
           <div
             className={`transition-all duration-1000 delay-300 ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"}`}
           >
             <div className="relative">
               <div className="mb-8 text-left">
-                <h3 className="text-2xl font-bold mb-3 hover:text-primary transition-colors cursor-pointer">Tech Stack</h3>
-                <p className="text-lg text-muted-foreground hover:text-foreground transition-colors cursor-pointer">Technologies I work with</p>
+                <h3 className="text-2xl font-bold mb-3 hover:text-primary transition-colors cursor-pointer"> Tech Stack Technologies I Work With</h3>
+                <p className="text-lg text-muted-foreground hover:text-foreground transition-colors cursor-pointer">A comprehensive overview of the technologies and tools I use to build mobile applications</p>
               </div>
 
               {/* Technical Skills Grid */}
               <div className="flex justify-start mt-8">
-                <div className="inline-grid grid-rows-3 auto-rows-max grid-flow-col gap-2">
+                <div className="inline-grid grid-flow-row auto-cols-max grid-cols-5 gap-2">
                   {technicalSkills.map((skill) => (
                     <div
                       key={skill.name}
                       className="flex flex-col items-center text-center"
                     >
                       {/* Technology card */}
-                      <div className="w-20 h-20 bg-background rounded-lg flex flex-col items-center justify-center shadow-sm border border-border/20 p-3 hover:scale-105 hover:shadow-md transition-all duration-200 cursor-pointer">
-                        <div className="w-6 h-6 mb-1">
+                      <div className="w-20 h-20 bg-background rounded-lg flex flex-col items-center gap-2 shadow-sm border border-border/20 p-3 hover:scale-105 hover:shadow-md transition-all duration-200 cursor-pointer">
+                        <div className="w-6 h-6">
                           {skill.icon}
                         </div>
-                        <h4 className="font-semibold text-xs text-foreground text-center leading-tight">
+
+                        <h4 className="font-semibold text-xs text-foreground text-center">
                           {skill.name}
                         </h4>
                       </div>
+
                     </div>
                   ))}
                 </div>

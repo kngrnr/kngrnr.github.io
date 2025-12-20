@@ -9,24 +9,24 @@ const highlights = [
   {
     icon: Smartphone,
     title: "Mobile-First",
-    description: "Specialized in creating native and cross-platform mobile applications",
+    description: "I build both native and cross-platform mobile apps that people actually enjoy using.",
   },
   {
     icon: Code,
     title: "Clean Code",
-    description: "Writing maintainable, scalable, and well-documented code",
+    description: "I write code that’s easy to read, maintain, and scale over time.",
   },
   {
     icon: Zap,
     title: "Performance",
-    description: "Optimizing apps for speed, efficiency, and smooth user experience",
+    description: "I make apps fast and smooth, so users have a seamless experience.",
   },
   {
-    icon: Users,
-    title: "User-Centric",
-    description: "Designing intuitive interfaces that users love to interact with",
+    icon: Users, // you can swap this icon with something like a Group/Team icon
+    title: "Teamwork",
+    description: "I enjoy brainstorming and collaborating with others to come up with creative solutions.",
   },
-]
+];
 
 export function InteractiveAboutSection() {
   const [activeHighlight, setActiveHighlight] = useState(0)
@@ -77,9 +77,8 @@ export function InteractiveAboutSection() {
               About <span className="text-primary">Me</span>
             </h2>
             <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-              I'm a passionate mobile developer with expertise in Flutter, iOS, and Android development. I love creating
-              innovative mobile solutions that solve real-world problems and deliver exceptional user experiences.
-            </p>
+  I’m a mobile developer who loves building apps that people enjoy using. I work with Flutter as well as native Android and iOS, focusing on creating reliable, easy to use apps that solve real problems. I’m always learning and exploring new ways to make better apps and broaden my skills.
+</p>
 
             <div className="space-y-4 mb-8">
               <div className="flex items-center gap-3">
@@ -106,7 +105,7 @@ export function InteractiveAboutSection() {
           <div
             className={`transition-all duration-1000 delay-300 ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"}`}
           >
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 gap-5">
               {highlights.map((highlight, index) => {
                 const Icon = highlight.icon
                 return (

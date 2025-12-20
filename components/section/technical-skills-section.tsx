@@ -21,14 +21,14 @@ export function TechnicalSkillsSection() {
             Tech Stack Technologies I Work With
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto text-pretty">
-            A comprehensive overview of the technologies and tools I use to build exceptional mobile applications
+            A comprehensive overview of the technologies and tools I use to build mobile applications
           </p>
         </div>
 
         {/* Grid of Technologies */}
         <div className="mx-auto">
          <div className="flex justify-center">
-          <div className="inline-grid grid-rows-3 auto-rows-max grid-flow-col gap-2">
+          <div className="inline-grid grid-rows-5 auto-rows-max grid-flow-col gap-3">
             {technicalSkills.map((skill) => (
               <div
                 key={skill.name}

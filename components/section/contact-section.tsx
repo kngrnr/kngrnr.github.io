@@ -10,7 +10,11 @@ import { Textarea } from "@/components/ui/textarea"
 import { Mail, MapPin, Phone, Send } from "lucide-react"
 import { useEffect, useRef, useState } from "react"; // added useEffect and useRef for animations
 
+
+
 export function ContactSection() {
+
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -45,8 +49,17 @@ export function ContactSection() {
   }, [])
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    // Handle form submission here
+    e.preventDefault();
+
+    const subject = encodeURIComponent(`Message from ${formData.name}`);
+    const body = encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`
+    );
+
+    window.location.href = `mailto:your.kngrnr.io@gmail.com?subject=${subject}&body=${body}`;
+
+    // Reset form (optional)
+    setFormData({ name: '', email: '', message: '' });
     console.log("Form submitted:", formData)
   }
 
@@ -70,9 +83,8 @@ export function ContactSection() {
       </div>
       <div className="container mx-auto px-4 relative">
         <div
-          className={`text-center mb-16 transition-all duration-1000 ease-out ${
-            animatedElements.has("header") ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
-          }`}
+          className={`text-center mb-16 transition-all duration-1000 ease-out ${animatedElements.has("header") ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
+            }`}
         >
           <h2 className="text-3xl font-bold text-balance mb-4">Get In Touch</h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto text-pretty">
@@ -83,9 +95,8 @@ export function ContactSection() {
         <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-12">
           {/* Contact Info */}
           <div
-            className={`space-y-8 transition-all duration-1000 ease-out ${
-              animatedElements.has("info") ? "translate-x-0 opacity-100" : "-translate-x-8 opacity-0"
-            }`}
+            className={`space-y-8 transition-all duration-1000 ease-out ${animatedElements.has("info") ? "translate-x-0 opacity-100" : "-translate-x-8 opacity-0"
+              }`}
           >
             <div>
               <h3 className="text-xl font-semibold mb-6">Let's Connect</h3>
@@ -112,7 +123,7 @@ export function ContactSection() {
                 </div>
                 <div>
                   <p className="font-medium group-hover:text-primary transition-colors duration-300">Phone</p>
-                  <p className="text-muted-foreground">+1 (555) 123-4567</p>
+                  <p className="text-muted-foreground">+63 939 456-7913</p>
                 </div>
               </div>
 
@@ -122,7 +133,7 @@ export function ContactSection() {
                 </div>
                 <div>
                   <p className="font-medium group-hover:text-primary transition-colors duration-300">Location</p>
-                  <p className="text-muted-foreground">San Jose Delmonte City, Bulacan, PH 🇵🇭</p>
+                  <p className="text-muted-foreground">San Jose Delmonte City, Bulacan 🇵🇭</p>
                 </div>
               </div>
             </div>
@@ -130,9 +141,8 @@ export function ContactSection() {
 
           {/* Contact Form */}
           <div
-            className={`transition-all duration-1000 ease-out ${
-              animatedElements.has("form") ? "translate-x-0 opacity-100" : "translate-x-8 opacity-0"
-            }`}
+            className={`transition-all duration-1000 ease-out ${animatedElements.has("form") ? "translate-x-0 opacity-100" : "translate-x-8 opacity-0"
+              }`}
           >
             <Card className="hover:shadow-2xl transition-all duration-500 hover:-translate-y-1 border-border/50 hover:border-border">
               <CardHeader>
@@ -205,4 +215,9 @@ export function ContactSection() {
       </div>
     </section>
   )
+
+
+
 }
+
+

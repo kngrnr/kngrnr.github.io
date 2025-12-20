@@ -65,7 +65,9 @@ export function Header() {
             >
               Contact
             </button>
-            <Button>Hire Me</Button>
+            <Button
+            onClick={() => window.open("https://www.linkedin.com/in/kngrnr/", "_blank")}
+            >Hire Me</Button>
             <ThemeToggle />
           </nav>
 
