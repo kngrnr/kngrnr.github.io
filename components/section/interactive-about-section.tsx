@@ -77,7 +77,7 @@ export function InteractiveAboutSection() {
               About <span className="text-primary">Me</span>
             </h2>
             <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-  I’m a mobile developer who loves building apps that people enjoy using. I work with Flutter as well as native Android and iOS, focusing on creating reliable, easy to use apps that solve real problems. I’m always learning and exploring new ways to make better apps and broaden my skills.
+  I’m King, mobile developer from the Philippines, who loves building apps that people enjoy using. I work with Flutter as well as native Android and iOS, focusing on creating reliable, easy to use apps that solve real problems. I’m always learning and exploring new ways to make better apps and broaden my skills.
 </p>
 
             <div className="space-y-4 mb-8">
@@ -87,12 +87,12 @@ export function InteractiveAboutSection() {
                 </Badge>
                 <span className="text-muted-foreground">Mobile Development Experience</span>
               </div>
-              {/* <div className="flex items-center gap-3">
+              <div className="flex items-center gap-3">
                 <Badge variant="secondary" className="bg-accent/10 text-accent">
-                  20+ Apps
+                 10+ years
                 </Badge>
-                <span className="text-muted-foreground">Successfully Launched</span>
-              </div> */}
+                <span className="text-muted-foreground">Total Experience</span>
+              </div>
               {/* <div className="flex items-center gap-3">
                 <Badge variant="secondary" className="bg-primary/10 text-primary">
                   500K+
