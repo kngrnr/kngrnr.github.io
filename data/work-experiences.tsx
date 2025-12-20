@@ -22,13 +22,40 @@ export interface Company {
 
 export const workExperiences: Company[] = [
   {
+    id: "Maya",
+    name: "Maya",
+    location: "Mandaluyong, PH",
+    startDate: "August 2025",
+    endDate: "Present",
+    icon: Building2,
+    iconColor: "text-green-600",
+    projects: [
+      {
+        id: "Maya Business 3.0",
+        name: "Maya Business 3.0",
+        description: "Mobile app thatcombines digital payments, banking services, and other financial tools under one roof to help businesses in the Philippines manage their finances and provide customers with a smooth payment experienc",
+        location: "Philippines",
+        responsibilities: [
+          "Developed reusable libraries and SDKs to enable scalable features, integrate RESTful APIs, and streamline implementation across applications.",
+          "Upgraded legacy SDKs, resolved critical crashes, and provided technical support to cross-functional teams for complex integrations.",
+          "Implemented new features from technical specifications and Figma designs, ensuring accuracy, usability, and performance.",
+          "Integrated native iOS and Android components with Flutter frameworks and configured CI/CD pipelines to support hybrid app development workflows.",
+          "Streamlined operations and improved revenue tools by enhancing digital payment functionalities within the platform.",
+          "Updated payment response handling and labels on a Node.js backend to ensure accurate and reliable transaction processing."
+        ],
+
+        technologies: ["Flutter", "Dart", "BLoC", "Kotlin", "Swift", "iOS", "Android", "GitLab", "CI/CD", "NodeJs", "Fastlane",]
+      },
+    ]
+  },
+  {
     id: "flexisourceit",
     name: "FlexisourceIT",
     location: "Makati, PH",
     startDate: "January 2022",
     endDate: "July 2025",
     icon: Building2,
-    iconColor: "text-green-600",
+    iconColor: "text-blue-600",
     projects: [
       {
         id: "halo-mobile",
@@ -36,13 +63,15 @@ export const workExperiences: Company[] = [
         description: "Equity research and investing app for global and local stocks.",
         location: "Australia",
         responsibilities: [
-          "Responsible for developing new features and implementing the Flutter BLoC architecture",
-          "Integrated REST APIs, GraphQL, and In-App Purchases to enhance app functionality",
-          "Update CI/CD setup using Firebase, Fastlane, CodeMagic, and GitLab for streamlined deployment",
-          "Created a reusable UK app flavor to support regional customization",
-          "Managed unit and widget testing, integrated Highcharts for data visualization, and implemented Firebase Messaging for push notifications",
-          "Improved UI/UX design and handled the end-to-end app submission and deployment process for both the App Store and Play Store"
+          "Resolved performance issues caused by inconsistent state management by implementing a scalable Flutter BLoC architecture with reusable components.",
+          "Enhanced market-data insights by integrating REST APIs, GraphQL, and Highcharts, enabling richer and more interactive stock analysis.",
+          "Optimized deployment reliability by overhauling the CI/CD pipeline with Firebase, Fastlane, CodeMagic, and GitLab, reducing release time and errors.",
+          "Enabled international expansion by creating a reusable UK app flavor, streamlining regional customization.",
+          "Strengthened app stability by implementing unit and widget tests, improving code reliability and maintainability.",
+          "Enhanced push notifications by integrating Firebase Messaging, delivering more reliable and timely updates.",
+          "Managed App Store and Play Store submissions, ensuring timely, consistent, and compliant releases."
         ],
+
         technologies: ["Flutter", "Dart", "BLoC", "REST API", "GraphQL", "Firebase", "Fastlane", "CodeMagic", "GitLab", "Highcharts"]
       },
       {
@@ -51,11 +80,12 @@ export const workExperiences: Company[] = [
         description: "Arts events, prizes planner.",
         location: "Australia",
         responsibilities: [
-          "Implemented In-App Purchases and push notifications to boost user retention",
-          "Developed new features to enhance app functionality",
-          "Refactored theme implementation for improved UI consistency",
-          "Resolved critical crashes, backend issues, and UI bugs to improve app stability and performance"
+          "Increased user retention and revenue by implementing In-App Purchases and push notifications tailored to event engagement.",
+          "Improved interface consistency and user experience by refactoring the app’s theme and standardizing UI components.",
+          "Boosted overall reliability by diagnosing and resolving critical crashes, backend failures, and UI defects.",
+          "Expanded application capabilities by developing new event-related features that enhanced usability and supported evolving user needs."
         ],
+
         technologies: ["Flutter", "Dart", "In-App Purchases", "Push Notifications", "Firebase"]
       }
     ]
@@ -75,10 +105,11 @@ export const workExperiences: Company[] = [
         description: "Alcohol delivery application",
         location: "USA",
         responsibilities: [
-          "Added Firebase Crashlytics for real-time error reporting",
-          "Reduced app crashes by addressing critical exceptions",
-          "Enhanced app stability and overall user experience"
+          "Added Firebase Crashlytics for real-time error reporting, reducing app crashes and improving reliability.",
+          "Diagnosed and fixed critical exceptions, enhancing overall stability and user experience.",
+          "Optimized app performance and error monitoring, enabling faster debugging and maintenance."
         ],
+
         technologies: ["React Native", "Firebase", "Crashlytics"]
       },
       {
@@ -87,8 +118,11 @@ export const workExperiences: Company[] = [
         description: "Camera Speed Vehicle application",
         location: "UK",
         responsibilities: [
-          "Bridged an outdated C SDK to Android and iOS using React Native, creating a proof of concept for technology integration"
+          "Bridged an outdated C SDK to Android and iOS using React Native, creating a proof of concept for seamless integration.",
+          "Implemented core app functionalities to support camera-speed vehicle monitoring.",
+          "Ensured cross-platform compatibility and smooth performance on Android and iOS."
         ],
+
         technologies: ["React Native", "C SDK", "Android", "iOS"]
       },
       {
@@ -97,10 +131,11 @@ export const workExperiences: Company[] = [
         description: "Comic application",
         location: "US",
         responsibilities: [
-          "Integrated analytics to track user engagement and behavior",
-          "Added new features and screens to improve user experience",
-          "Implemented payment methods for subscription-based services"
+          "Integrated analytics to track user engagement and behavior for data-driven improvements.",
+          "Added new screens and features to enhance usability and overall experience.",
+          "Implemented subscription-based payment methods, increasing monetization opportunities."
         ],
+
         technologies: ["React Native", "Analytics", "Payment Integration"]
       },
       {
@@ -109,12 +144,12 @@ export const workExperiences: Company[] = [
         description: "Driver and food application",
         location: "Philippines",
         responsibilities: [
-          "Led development of a solution for finding and accepting bookings",
-          "Implemented UI, authentication, and payment systems",
-          "Integrated Google technologies to enhance functionality",
-          "Developed a real-time connection solution using SOCKET for seamless communication"
+          "Led development of a solution for finding and accepting bookings, improving driver workflow efficiency.",
+          "Implemented authentication, UI, and payment systems to ensure secure and seamless user interactions.",
+          "Integrated Google technologies and developed real-time SOCKET communication for instant updates."
         ],
-        technologies: ["React Native", "Socket.io", "Google APIs", "Authentication", "Payment Systems"]
+
+        technologies: ["React Native", "Socket.io", "Google APIs", "Authentication", "Payment Systems",]
       },
       {
         id: "reeportr",
@@ -122,8 +157,11 @@ export const workExperiences: Company[] = [
         description: "Events reporter application",
         location: "UAE",
         responsibilities: [
-          "Implemented screens, authentication, and algorithms, along with storage and data-saving solutions to enhance app functionality"
+          "Developed screens, authentication flows, and algorithms to enhance core app functionality.",
+          "Implemented data storage and saving solutions for reliable offline and online usage.",
+          "Optimized performance to handle high volumes of event reporting efficiently."
         ],
+
         technologies: ["React Native", "Authentication", "Data Storage"]
       },
       {
@@ -132,10 +170,11 @@ export const workExperiences: Company[] = [
         description: "Contract management application",
         location: "US",
         responsibilities: [
-          "Developed an app for customer transactions and management contracting",
-          "Integrated Firebase analytics and authentication",
-          "Utilized MVVM architecture for a maintainable and scalable codebase"
+          "Built a customer transaction and contract management app with Firebase authentication and analytics.",
+          "Utilized MVVM architecture to ensure maintainable and scalable code.",
+          "Implemented features for secure data handling and real-time updates."
         ],
+
         technologies: ["React Native", "Firebase", "MVVM", "Analytics"]
       },
       {
@@ -144,8 +183,11 @@ export const workExperiences: Company[] = [
         description: "Cosmetics planner application",
         location: "AU",
         responsibilities: [
-          "Led app development, implementing Firebase analytics and authentication while designing and integrating core functionalities"
+          "Led app development, implementing Firebase analytics and authentication for tracking user behavior.",
+          "Designed and integrated core functionalities to support personalized planning.",
+          "Improved usability and performance through optimized UI and feature workflows."
         ],
+
         technologies: ["React Native", "Firebase", "Analytics"]
       },
       {
@@ -154,9 +196,11 @@ export const workExperiences: Company[] = [
         description: "Streaming camera feed application",
         location: "US",
         responsibilities: [
-          "Developed an app for streaming camera feed over Wi-Fi and enabling iOS communication with the camera via MQTT",
-          "Created reusable views for cross-screen functionality"
+          "Developed an app for streaming camera feeds over Wi-Fi, enabling iOS communication via MQTT.",
+          "Created reusable views for cross-screen functionality, improving development efficiency.",
+          "Leveraged Swift, CocoaPods, C++, Python, MQTT, and Git to ensure reliable, cross-platform performance."
         ],
+
         technologies: ["iOS", "Swift", "CocoaPods", "C++", "Python", "MQTT", "Git"]
       }
     ]
@@ -176,10 +220,11 @@ export const workExperiences: Company[] = [
         description: "Mainframe banking system for private banking clients",
         location: "Philippines",
         responsibilities: [
-          "Developed, maintained, and tested COBOL batch programs and JCLs from SIT to UAT and production",
-          "Created and tested COBOL online programs",
-          "Supported batch job executions with CA7 and maintained batch runs on UAT and production environments"
+          "Developed and maintained COBOL batch programs and JCLs, supporting the process from SIT to UAT and production.",
+          "Created and tested COBOL online programs to ensure accurate functionality and system reliability.",
+          "Supported batch job executions using CA7 and maintained batch runs in UAT and production environments."
         ],
+
         technologies: ["COBOL", "JCL", "CA7", "Mainframe", "UAT", "Production"]
       }
     ]

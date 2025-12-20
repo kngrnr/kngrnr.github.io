@@ -59,9 +59,9 @@ export function ProfessionalHeroSection() {
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-black mb-6 leading-tight">
-              <span className="text-primary">I Build Mobile Apps That Turn Ideas</span>
+              <span className="text-primary">I build mobile apps that turn</span>
               <br />
-              into Reality Ideas
+              Ideas into Reality
               <br />
               <span className="text-accent [background:linear-gradient(to_right,hsl(var(--primary)),hsl(var(--accent)))] bg-clip-text [-webkit-background-clip:text] [-webkit-text-fill-color:transparent] [&:not(:has(.bg-clip-text))]:text-accent">
                 Experiences
