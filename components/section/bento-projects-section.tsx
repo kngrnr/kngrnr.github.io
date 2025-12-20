@@ -60,6 +60,14 @@ export function BentoProjectsSection() {
           </div>
         </div>
       </div>
+      <div className="container mx-auto px-4 mt-16">
+        <div className="text-center text-yellow-500 flex flex-col items-center gap-2">
+          <span className="text-4xl">🚀</span>
+          <p className="text-lg font-semibold">
+            🚧 This section is under construction — more projects coming soon!
+          </p>
+        </div>
+      </div>
 
       <style jsx>{`
         .play-store-btn {
@@ -105,17 +113,23 @@ function ProjectCard({
             <div className="absolute top-2 right-2 w-8 h-8 bg-primary/10 rounded-full blur-xl"></div>
             <div className="absolute bottom-2 left-2 w-6 h-6 bg-secondary/20 rounded-full blur-lg"></div>
 
-            <div className="relative group-hover:scale-105 transition-transform duration-500 mb-6">
-              <div className="w-full max-w-sm aspect-video rounded-lg overflow-hidden shadow-lg">
-                <Image
-                  src={project.image || "/placeholder.svg"}
-                  alt={project.title}
-                  width={400}
-                  height={225}
-                  className="w-full h-full object-cover"
-                />
+            <a
+              href={project.companyUrl} // replace with the link you want
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div className="relative group-hover:scale-105 transition-transform duration-500 mb-6">
+                <div className="w-full max-w-sm aspect-video rounded-lg overflow-hidden shadow-lg">
+                  <Image
+                    src={project.image || "/placeholder.svg"}
+                    alt={project.title}
+                    width={400}
+                    height={225}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
               </div>
-            </div>
+            </a>
 
             {/* Technologies with better styling */}
             <div className="w-full mb-4">
@@ -139,18 +153,21 @@ function ProjectCard({
           </div>
 
           <div className="p-6 flex flex-col space-y-4">
-            <h3 className="text-lg font-bold text-balance group-hover:text-primary transition-colors">
-              {project.title}
-            </h3>
+  <h3 className="text-lg font-bold text-balance group-hover:text-primary transition-colors">
+    {project.title}
+  </h3>
 
-            <p className="text-muted-foreground text-sm leading-relaxed text-pretty">{project.description}</p>
+  <p className="text-muted-foreground text-sm leading-relaxed text-pretty">
+    {project.description}
+  </p>
 
-            <div className="flex flex-wrap gap-2 pt-2">
+  <div className="flex flex-wrap gap-1 justify-start"> {/* Buttons aligned to left */}
+{/*     
               {project.githubUrl && (
                 <Button
                   size="sm"
                   variant="outline"
-                  className="group/btn flex-1 min-w-[80px] bg-transparent text-xs h-9 px-3"
+                  className="group/btn w-auto  min-w-[80px] bg-transparent text-xs h-9 px-3"
                   asChild
                 >
                   <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
@@ -158,33 +175,41 @@ function ProjectCard({
                     <span className="truncate">Code</span>
                   </a>
                 </Button>
-              )}
+              )} */}
 
               {project.playstoreUrl && (
                 <a
                   href={project.playstoreUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="play-store-btn group/btn flex-1 min-w-[80px] h-9 px-3 rounded-md text-xs font-medium inline-flex items-center justify-center transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
+                  className="play-store-btn w-auto group/btn  h-9 px-0 rounded-md inline-flex items-center justify-center transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
                 >
-                  <Smartphone className="w-3 h-3 mr-2 group-hover/btn:scale-110 transition-transform" />
-                  <span className="truncate">Play</span>
+                  <img
+                    src="/images/playstore.png"
+                    alt="Google Play"
+                    className="h-9 object-contain group-hover/btn:scale-105 transition-transform"
+                  />
                 </a>
               )}
+
 
               {project.appstoreUrl && (
                 <a
                   href={project.appstoreUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="app-store-btn group/btn flex-1 min-w-[80px] h-9 px-3 rounded-md text-xs font-medium inline-flex items-center justify-center transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
+                  className="app-store-btn group/btn  h-9 px-0 rounded-md inline-flex items-center justify-center transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
                 >
-                  <Smartphone className="w-3 h-3 mr-2 group-hover/btn:scale-110 transition-transform" />
-                  <span className="truncate">iOS</span>
+                  <img
+                    src="/images/appstore.png" // adjust the filename if needed
+                    alt="App Store"
+                    className="h-9 object-contain group-hover/btn:scale-105 transition-transform"
+                  />
                 </a>
               )}
 
-              {project.companyUrl && (
+
+              {/* {project.companyUrl && (
                 <Button
                   size="sm"
                   variant="secondary"
@@ -196,7 +221,7 @@ function ProjectCard({
                     <span className="truncate text-foreground">Website</span>
                   </a>
                 </Button>
-              )}
+              )} */}
             </div>
           </div>
         </div>
