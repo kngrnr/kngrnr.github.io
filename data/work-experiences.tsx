@@ -31,6 +31,24 @@ export const workExperiences: Company[] = [
     iconColor: "text-green-600",
     projects: [
       {
+        id: "Maya Consumer",
+        name: "Maya Consumer",
+        description: "Consumer digital bank and e-wallet app offering payments, savings, credit, and loans to millions of Filipinos.",
+        location: "Philippines",
+        responsibilities: [
+          "Engineered features for the Credit and Loans department, delivering consumer lending experiences across the Maya app.",
+          "Led the design and development of a reusable restructuring workflow shared across Credit, Loans, and Credit Card products, reducing duplicated effort and speeding up delivery for each product line.",
+          "Implemented the Ginisi project, integrating AI-driven credit decisioning into the lending flow.",
+          "Implemented geofencing for loan products to enforce location-based eligibility and compliance requirements.",
+          "Built UI components and business logic from technical specifications and Figma designs, ensuring accuracy, usability, and performance.",
+          "Investigated and resolved production issues, working with cross-functional teams to restore stability and minimize customer impact.",
+          "Served as Release Champion, coordinating release readiness, regression checks, and deployment across iOS and Android.",
+          "Acted as Scrum Master, facilitating sprint ceremonies, tracking delivery, and removing blockers for the team."
+        ],
+
+        technologies: ["Flutter", "Dart", "Swift", "Kotlin", "iOS", "Android", "Geofencing", "Figma", "Scrum"]
+      },
+      {
         id: "Maya Business 3.0",
         name: "Maya Business 3.0",
         description: "Mobile app thatcombines digital payments, banking services, and other financial tools under one roof to help businesses in the Philippines manage their finances and provide customers with a smooth payment experienc",
@@ -110,7 +128,7 @@ export const workExperiences: Company[] = [
           "Optimized app performance and error monitoring, enabling faster debugging and maintenance."
         ],
 
-        technologies: ["React Native", "Firebase", "Crashlytics"]
+        technologies: ["Flutter", "Dart", "Firebase", "Crashlytics"]
       },
       {
         id: "cyclops-navigator",
@@ -123,7 +141,7 @@ export const workExperiences: Company[] = [
           "Ensured cross-platform compatibility and smooth performance on Android and iOS."
         ],
 
-        technologies: ["React Native", "C SDK", "Android", "iOS"]
+        technologies: ["React Native", "Swift", "Objective-C", "C SDK", "Android", "iOS"]
       },
       {
         id: "macroverse",
@@ -136,7 +154,7 @@ export const workExperiences: Company[] = [
           "Implemented subscription-based payment methods, increasing monetization opportunities."
         ],
 
-        technologies: ["React Native", "Analytics", "Payment Integration"]
+        technologies: ["Flutter", "Dart", "Analytics", "Payment Integration"]
       },
       {
         id: "lets-driver",
@@ -149,7 +167,7 @@ export const workExperiences: Company[] = [
           "Integrated Google technologies and developed real-time SOCKET communication for instant updates."
         ],
 
-        technologies: ["React Native", "Socket.io", "Google APIs", "Authentication", "Payment Systems",]
+        technologies: ["Flutter", "Dart", "Socket.io", "Google APIs", "Authentication", "Payment Systems"]
       },
       {
         id: "reeportr",
@@ -162,7 +180,7 @@ export const workExperiences: Company[] = [
           "Optimized performance to handle high volumes of event reporting efficiently."
         ],
 
-        technologies: ["React Native", "Authentication", "Data Storage"]
+        technologies: ["Flutter", "Dart", "Authentication", "Data Storage"]
       },
       {
         id: "ecors",
@@ -175,7 +193,7 @@ export const workExperiences: Company[] = [
           "Implemented features for secure data handling and real-time updates."
         ],
 
-        technologies: ["React Native", "Firebase", "MVVM", "Analytics"]
+        technologies: ["Swift", "iOS", "Firebase", "MVVM", "Analytics"]
       },
       {
         id: "cosmetiko",
@@ -188,7 +206,7 @@ export const workExperiences: Company[] = [
           "Improved usability and performance through optimized UI and feature workflows."
         ],
 
-        technologies: ["React Native", "Firebase", "Analytics"]
+        technologies: ["Swift", "iOS", "Firebase", "Analytics"]
       },
       {
         id: "sego",
@@ -209,7 +227,7 @@ export const workExperiences: Company[] = [
     id: "bpi",
     name: "Bank of the Philippines Islands",
     location: "Philippines",
-    startDate: "December 2015",
+    startDate: "June 2015",
     endDate: "May 2019",
     icon: Banknote,
     iconColor: "text-yellow-600",
