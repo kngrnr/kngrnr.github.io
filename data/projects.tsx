@@ -4,13 +4,26 @@ export const projects = [
     title: "Maya",
     description:
       "Popular digital wallet and bank in the Philippines, Offers e-wallet, savings, credit, loans, and even crypto/stock investing, allowing users to manage finances easily.",
-    image: "https://orangemagazine.ph/wp-content/uploads/2023/10/MAYA-Funds.jpg",
+    image: "/images/maya/maya-consumer-showcase.jpg",
     technologies: ["Flutter", "Dart", "Kotlin", "Swift", "Charts"],
     liveUrl: "#",
     // githubUrl: "https://github.com/username/ecommerce-platform",
     playstoreUrl: 'https://play.google.com/store/apps/details?id=com.paymaya&hl=en',
     appstoreUrl: 'https://apps.apple.com/ph/app/maya-savings-loans-cards/id991673877',
     companyUrl: "https://www.maya.ph/",
+    featured: true,
+  },
+  {
+    id: 4,
+    title: "Maya Business",
+    description:
+      "All-in-one business app for Philippine merchants: accept QR Ph and card payments, send Payment Links, settle sales instantly and manage business banking from app to web.",
+    image: "/images/maya/maya-business-showcase.jpg",
+    technologies: ["Flutter", "Dart", "Kotlin", "Swift", "Node.js"],
+    liveUrl: "#",
+    playstoreUrl: 'https://play.google.com/store/apps/details?id=ph.maya.business.android&hl=en',
+    appstoreUrl: 'https://apps.apple.com/ph/app/maya-business/id6755230144',
+    companyUrl: "https://www.maya.ph/business",
     featured: true,
   },
   {
