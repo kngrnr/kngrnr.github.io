@@ -1,5 +1,31 @@
 export const projects = [
   {
+    id: 5,
+    title: "Adora Kids (Kodomamo)",
+    description:
+      "AI-powered child safety app for kids' smartphones in Japan: on-device detection of unsafe images and chats, location tracking, walking-while-using prevention and parent-set screen time rules.",
+    image: "/images/adora/adora-kids-showcase.jpg",
+    technologies: ["Flutter", "Dart", "Kotlin", "Swift", "On-device AI"],
+    liveUrl: "#",
+    playstoreUrl: 'https://play.google.com/store/apps/details?id=jp.smartbooks.kodomamo&hl=en',
+    appstoreUrl: 'https://apps.apple.com/us/app/adora-kids/id6443787669',
+    companyUrl: "https://adora-app.com/",
+    featured: true,
+  },
+  {
+    id: 6,
+    title: "Adora - Parental Control",
+    description:
+      "Companion parent app for Adora Kids: view your child's location and activity in one screen, create smartphone rules, get unsafe text and image alerts, with Face ID lock and a notification blocking panel.",
+    image: "/images/adora/adora-parent-showcase.jpg",
+    technologies: ["Flutter", "Dart", "Kotlin", "Swift", "Face ID"],
+    liveUrl: "#",
+    playstoreUrl: 'https://play.google.com/store/apps/details?id=jp.smartbooks.kodomamo.parentapp&hl=en',
+    appstoreUrl: 'https://apps.apple.com/us/app/adora-parental-control/id1671825554',
+    companyUrl: "https://adora-app.com/",
+    featured: true,
+  },
+  {
     id: 1,
     title: "Maya",
     description:

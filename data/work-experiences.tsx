@@ -22,11 +22,43 @@ export interface Company {
 
 export const workExperiences: Company[] = [
   {
+    id: "adora",
+    name: "Adora",
+    location: "Tokyo, Japan",
+    startDate: "August 2026",
+    endDate: "Present",
+    icon: Building2,
+    iconColor: "text-teal-500",
+    projects: [
+      {
+        id: "kodomamo",
+        name: "Kodomamo & Kodomamo Parent",
+        description: "Child safety app (Adora Kids) and its companion parental control app (Adora Parent), protecting children from harmful content and smartphone overuse.",
+        location: "Japan",
+        responsibilities: [
+          "Develop features for Kodomamo, a child safety app, and its companion Kodomamo Parent app, translating Figma designs into accurate, responsive, and accessible UI.",
+          "Collaborate across the child and parent apps to deliver features that sync between both, keeping behavior and data consistent end to end.",
+          "Build Kotlin and Swift platform-specific plugins to expose native capabilities to Flutter, including device-level safety and monitoring functions.",
+          "Contribute to on-device image and chat detection features that help protect children from harmful content.",
+          "Implement parent app features including Face ID authentication, screen time management, and a notification blocking panel.",
+          "Investigate and resolve crashes and runtime errors on both apps, improving overall stability and user experience.",
+          "Enhance existing functionality and optimize app performance, reducing load times and resource usage.",
+          "Shape app architecture and code structure for maintainability and scalability as the product grows.",
+          "Review teammates' pull requests and support QA by testing builds, helping maintain code quality across the team.",
+          "Work within a CI/CD pipeline on Codemagic for automated builds and distribution to testers.",
+          "Collaborate remotely with a distributed, cross-cultural team based in Tokyo."
+        ],
+
+        technologies: ["Flutter", "Dart", "Kotlin", "Swift", "iOS", "Android", "Platform Channels", "On-device AI", "Face ID", "Codemagic", "Figma"]
+      },
+    ]
+  },
+  {
     id: "Maya",
     name: "Maya",
     location: "Mandaluyong, PH",
     startDate: "August 2025",
-    endDate: "Present",
+    endDate: "November 2026",
     icon: Building2,
     iconColor: "text-green-600",
     projects: [
