@@ -1,4 +1,6 @@
 export const projects = [
+  // Adora projects hidden for now — remove the comment markers to show them.
+  /*
   {
     id: 5,
     title: "Adora Kids (Kodomamo)",
@@ -25,6 +27,7 @@ export const projects = [
     companyUrl: "https://adora-app.com/",
     featured: true,
   },
+  */
   {
     id: 1,
     title: "Maya",

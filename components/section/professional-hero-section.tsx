@@ -182,7 +182,7 @@ export function ProfessionalHeroSection() {
 
 const openResume = () => {
   window.open(
-    "https://drive.google.com/uc?export=download&id=1wJCbCJXvWtIokXYK6ypAfNmxzCQ8_aRb",
+    "https://drive.usercontent.google.com/download?id=1NRSw6Mc0aNeL8lwqtJFeQ_J6hJwZruwZ&export=download&authuser=0&confirm=t&uuid=48be1f4c-cafb-4afa-8efb-68545585bffc&at=ANTm3cwAYqzMSdsJYdqddta21OlU:1766200935049",
     "_blank",
     "noopener,noreferrer"
   );
